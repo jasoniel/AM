@@ -5,9 +5,10 @@
 	margin:0px auto;
 	width: 800px;
 	height: 600px;
-	bakcground-color:black;
-	
+	background-image: url(\img/fundo.jpg);	
+	 
 }
+
 #menu{
 	margin-top: 25px;
 }
@@ -63,8 +64,5 @@ ul li{
 	width:250px;
 	height: 600px;
 	float: left;
-	
-	
-	
 }
 
