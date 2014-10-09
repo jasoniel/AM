@@ -34,7 +34,7 @@
 				
 					<div id="conteudo_top">
 					
-						<form name ="form_listar_processos" id="idFormListar" method="get" action="" >
+						<form name ="form_listar_processos" id="idFormListar" method="get" action="listaProcessos" >
 							<fieldset>
 								Número do Processo: <input type="text" name="nrProcesso" required  id="idNrProcesso" /><br/>
 								Nome do Cliente: <input type="text" name="nomeCliente" required="required" id="idNomeCliente"  ><br/>
