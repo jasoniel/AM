@@ -1,0 +1,41 @@
+ul li{
+	border: 1px;
+	line-height: 30px;
+}
+
+#idFormCProcessos{
+	
+	margin-left: 50px;
+	margin-top:40px;
+}
+
+#idCliente{
+	width: 173px;
+	margin-left: 17px;
+}
+#idSelectCausa{
+	width:120px;
+	margin-left: 33px;
+	
+}
+
+#idDescricao{
+	width: 173px;
+}
+
+#idSelectAdvogado{
+	width: 186px;
+}
+#idSelectSituacao{
+	width:120px;
+	margin-left: 67px;
+}
+
+#idResultCausa{
+	width:120px;
+	
+}
+
+#idDVencimento{
+	width:15px;
+}

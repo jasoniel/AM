@@ -1,0 +1,9 @@
+function valida (){
+	
+	var test = $
+}
+
+
+
+
+

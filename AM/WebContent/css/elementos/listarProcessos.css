@@ -1,0 +1,45 @@
+ul li{
+	border: 1px;
+	line-height: 30px;
+}
+
+#conteudo_top{
+	
+	width: 596px;
+	height: 200px;
+	float: right;
+	
+}
+
+#conteudo_bottom{
+	
+	width: 596px;
+	height: 200px;
+	float: right;
+	margin-top:48px;
+	
+}
+
+#idFormListar{
+	margin-left: 0px;
+	margin-top:33px;
+	width: 100%;
+	
+}
+
+#idNrProcesso{
+	width:181px;
+}
+
+#idBtnBuscar{
+	margin-left: 362px;
+}
+#idNomeCliente{
+	width: 181px;
+	margin-left: 27px;
+}
+table{
+	margin:auto;
+	
+}
+

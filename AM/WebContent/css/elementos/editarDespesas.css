@@ -1,0 +1,25 @@
+
+
+#idDivFormEditarDespesa{
+	width: 360px;
+	heigth:350px;
+	margin: 25px 0px 0px 130px;
+}
+#idNmClienteEdDesp{
+	margin-left: 25px;
+}
+#idEdDespDtDesp{
+	margin-left: 20px;
+}
+#idValorDespEdDesp{
+	margin-left: 18px;
+}
+#idTpDespEdDesp{
+	margin-left: 65px;
+}
+#idObsEdDesp{
+	margin-left: 42px;
+}
+#idBtnEnviarEdDesp{
+	margin-left:200px;
+}

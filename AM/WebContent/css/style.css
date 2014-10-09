@@ -1,0 +1,70 @@
+
+#todo{
+	
+	border: 3px solid black;
+	margin:0px auto;
+	width: 800px;
+	height: 600px;
+	bakcground-color:white;
+	
+}
+#menu{
+	margin-top: 25px;
+}
+#topo{
+	width: 800px;
+	height: 100px;
+}
+#logo{
+
+	width:200px;
+	height:100px;
+}
+
+#meio{
+
+	width: 800px;
+	height: 450px;
+}
+
+#rodape{
+
+	width: 800px;
+	height: 46px;
+}
+#conteudo_meio{
+	
+	width: 400px;
+	height: 450px;
+	margin:0px auto;	
+}
+
+#conteudo_esquerdo{
+	
+	
+	width: 200px;
+	height: 450px;
+	float: left;
+}
+#conteudo_direito{
+	     
+	width:595px;
+	height:450px;
+	float:right;
+}
+
+ul li{
+	border: 1px;
+	line-height: 30px;
+}
+
+#logo_left{
+	
+	width:250px;
+	height: 600px;
+	float: left;
+	
+	
+	
+}
+
