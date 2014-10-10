@@ -66,8 +66,8 @@
 										<textarea id="idObs" ></textarea>
 									</div>
 									<div id ="idDivBtns">
-									<button type="submit" class="btn btn-success" id="idBtnCadastrar">Cadastrar</button>
-									<button type="reset" class="btn btn-danger" id="idBtnLimpar"><i class=icon-remove-sign></i> Limpar</button>
+									<button type="submit" class="btn btn-inverse" id="idBtnCadastrar">Cadastrar</button>
+									<button type="reset" class="btn btn-inverse" id="idBtnLimpar"><i class=icon-remove-sign></i> Limpar</button>
 								</div>
 								</fieldset>
 							</form>

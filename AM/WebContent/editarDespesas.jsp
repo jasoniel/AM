@@ -64,8 +64,8 @@
 								Observações: <textarea name="obsEdDesp" id="idObsEdDesp" rows="" cols=""></textarea>
 							</div>
 						
-							<button type="submit" class="btn btn-success" id="idBtnEnviarEdDesp">Editar</button>
-							<button type="reset" class="btn btn-danger" id="idBtnLimparEdDesp"><i class=icon-remove-sign></i> Limpar</button>
+							<button type="submit" class="btn btn-inverse" id="idBtnEnviarEdDesp">Editar</button>
+							<button type="reset" class="btn btn-inverse" id="idBtnLimparEdDesp"><i class=icon-remove-sign></i> Limpar</button>
 						</form>
 					
 					</div>

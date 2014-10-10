@@ -60,8 +60,8 @@
 			
 					Observação:<textarea></textarea><br/>
 			
-					<button type="submit" class="btn btn-success">Cadastrar</button> 
-					<button type="reset" class="btn btn-danger">Limpar</button>
+					<button type="submit" class="btn btn-inverse">Cadastrar</button> 
+					<button type="reset" class="btn btn-inverse">Limpar</button>
 					
 				</form>
 				

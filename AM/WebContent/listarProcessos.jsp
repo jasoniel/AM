@@ -39,8 +39,8 @@
 								Nome do Cliente: <input type="text" name="nomeCliente" required="required" id="idNomeCliente"  ><br/>
 								Período: <input type="date" name="dtIncialPeriodo" id="idDtInicial" required="required">
 								até <input type="date" name="dtFinallPeriodo" id="idDtFinal" required="required"><br/>
-								<button type="submit" class="btn btn-success" id="idBtnBuscar"><i class="icon-search"></i> Buscar</button>
-								<button type="reset" class="btn btn-danger" id="btnLimpar">Limpar</button>
+								<button type="submit" class="btn btn-inverse" id="idBtnBuscar"><i class="icon-search"></i> Buscar</button>
+								<button type="reset" class="btn btn-inverse" id="btnLimpar">Limpar</button>
 								
 				
 							</fieldset>
@@ -51,7 +51,7 @@
 					
 					<div id="conteudo_bottom" >
 					
-						<table class="table table-hover">
+						<table class="table">
 							<tr>
 								<th>Número</th>
 								<th>Descrição</th>

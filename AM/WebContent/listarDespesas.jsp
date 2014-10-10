@@ -33,7 +33,7 @@
 				
 					<div id="conteudo_top">
 					
-						<table class="table table-hover">
+						<table class="table">
 						
 							<tr>
 								<th>Número</th>
