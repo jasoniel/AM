@@ -17,13 +17,17 @@
 
 		<div id="topo">
 
-			<div id="logo"><c:import url="estrutura/topo.jsp"></c:import></div>
-
+			<c:import url="estrutura/topo.jsp"></c:import>
+			
+		
+			
+			
 		</div>
 		
 		<div id="meio"> 
 		
 			<div id="conteudo_esquerdo">
+			
 				<c:import url="estrutura/conteudo-esquerdo.jsp"></c:import>
 				
 			</div>
@@ -33,16 +37,19 @@
 				
 					<div id="conteudo_top">
 					
+					<!--função para mudar mensagem do required oninvalid="this.setCustomValidity('Messagem')" 
+					
+					pattern="^[a-zA-Z]{1,}$ \s  {1,} $"
+					-->
+					
 						<form name ="form_listar_processos" id="idFormListar" method="get" action="listaProcessos" >
 							<fieldset>
 								Número do Processo: <input type="text" name="nrProcesso" required  id="idNrProcesso" /><br/>
-								Nome do Cliente: <input type="text" name="nomeCliente" required="required" id="idNomeCliente"  ><br/>
+								Nome do Cliente: <input type="text" name="nomeCliente" required  id="idNomeCliente"  ><br/>
 								Período: <input type="date" name="dtIncialPeriodo" id="idDtInicial" required="required">
 								até <input type="date" name="dtFinallPeriodo" id="idDtFinal" required="required"><br/>
 								<button type="submit" class="btn btn-inverse" id="idBtnBuscar"><i class="icon-search"></i> Buscar</button>
 								<button type="reset" class="btn btn-inverse" id="btnLimpar">Limpar</button>
-								
-				
 							</fieldset>
 						</form>
 					

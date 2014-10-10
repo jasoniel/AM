@@ -10,7 +10,28 @@
 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 </head>
 <body>
+
 	<div id="logo"><img src="img/libra.png" id="img-logo"></div>
+	
+		<div id="conteudo_topo_direito">
+
+		<div id="menu_conteudo_topo_direito">
+		
+			<div class="btn-group">
+				<button class="btn btn-inverse" disabled href="#"><i class="icon-user icon-white"></i> Usuário</button>
+				 <a class="btn btn-inverse dropdown-toggle" data-toggle="dropdown"
+					href="#"><span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="#"><i class="icon-ban-circle"></i> Logout</a></li>
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+		
+			
+			
+			
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 </body>

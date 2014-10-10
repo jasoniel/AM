@@ -17,12 +17,15 @@
 #topo{
 	width: 800px;
 	height: 48px;
-	background-color: #232323;
+	/*background-color: #232323;*/
+	
 }
 #logo{
 
 	width:200px;
 	height:48px;
+
+	float:left;
 }
 
 #meio{
@@ -30,8 +33,8 @@
 	width: 800px;
 	height: 552px;
 	
-	
 }
+
 /*
 #rodape{
 
@@ -66,14 +69,14 @@ ul li{
 	border: 1px;
 	line-height: 30px;
 }
-
+/*
 #logo_left{
 	
 	width:250px;
 	height: 600px;
 	float: left;
 	
-}
+}*/
 
 h3{
 	margin: 30px 10px 15px;
@@ -84,4 +87,11 @@ h3{
 	color: #8D8D8D;
 	text-align: center;
 }
-
+#conteudo_topo_direito{
+	width:598px;
+	height: 48px;
+	float: right;
+}
+#menu_conteudo_topo_direito{
+	margin:16px 0px 0px 479px;
+}
