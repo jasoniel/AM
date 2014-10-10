@@ -4,18 +4,18 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class ConnectionFactory {
+public class ConnectionManager {
 
 	
 	
-	public static ConnectionFactory instance;
+	public static ConnectionManager instance;
 	
 	
 	
-	public static ConnectionFactory getInstance(){
+	public static ConnectionManager getInstance(){
 		
 		if (instance == null){
-			instance = new ConnectionFactory();
+			instance = new ConnectionManager();
 		}
 		
 		return instance;
