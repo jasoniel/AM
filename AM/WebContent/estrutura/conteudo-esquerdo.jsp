@@ -12,9 +12,9 @@
 	
 				
 				<div id="menu">
-				
+				<center><h3>Menu</h3></center>
 				<ul class="nav nav-list">
-					<li id="teste"><a href="listarProcessos.jsp">Listar Processos</a></li>
+					<li ><a href="listarProcessos.jsp">Listar Processos</a></li>
 					<li><a href="cadastrarProcessos.jsp">Cadastrar Processos</a></li>
 					<li><a href="#">Cadastrar Tipo de Tarefa</a></li>
 					<li><a href="#">Cadastrar Tipo de Causa</a></li>

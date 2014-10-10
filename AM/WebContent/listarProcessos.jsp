@@ -17,14 +17,13 @@
 
 		<div id="topo">
 
-			<div id="logo"><img src="img/libra.png"></div>
+			<div id="logo"><c:import url="estrutura/topo.jsp"></c:import></div>
 
 		</div>
 		
 		<div id="meio"> 
 		
 			<div id="conteudo_esquerdo">
-				
 				<c:import url="estrutura/conteudo-esquerdo.jsp"></c:import>
 				
 			</div>
@@ -49,6 +48,7 @@
 					
 					</div>
 					
+					
 					<div id="conteudo_bottom" >
 					
 						<table class="table table-hover">
@@ -59,9 +59,10 @@
 								<th>Ação</th>
 							</tr>
 						</table>
-						
-					
+
 					</div>
+					
+					
 				</div>
 		
 		</div>

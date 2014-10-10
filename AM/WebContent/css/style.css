@@ -1,57 +1,62 @@
 
 #todo{
-	
-	border: 3px solid black;
+	font-family: "Open Sans",sans-serif;
 	margin:0px auto;
 	width: 800px;
 	height: 600px;
-	background-image: url(\img/fundo.jpg);	
-	 
+	border:3px solid black;
 }
 
 #menu{
 	margin-top: 25px;
+	
+	
 }
 #topo{
 	width: 800px;
-	height: 100px;
+	height: 48px;
+	background-color: #FFFFFF;
 }
 #logo{
 
 	width:200px;
-	height:100px;
+	height:48px;
 }
 
 #meio{
 
 	width: 800px;
-	height: 450px;
+	height: 552px;
+	border:1px solid black;
 	
 }
-
+/*
 #rodape{
 
 	width: 800px;
 	height: 46px;
-}
+	border:1px solid black;
+}*/
 #conteudo_meio{
 	
 	width: 400px;
 	height: 450px;
-	margin:0px auto;	
+	margin:0px auto;
+	
 }
 
 #conteudo_esquerdo{
 	
 	
 	width: 200px;
-	height: 450px;
+	height: 552px;
 	float: left;
+	background-color: #232323;
 }
 #conteudo_direito{
 	     
 	width:595px;
-	height:450px;
+	height:552px;
 	float:right;
 }
 
@@ -65,5 +70,16 @@ ul li{
 	width:250px;
 	height: 600px;
 	float: left;
+	
+}
+
+h3{
+	margin: 30px 10px 15px;
+	border-bottom: 1px solid #3d3d3d;
+	font-family: "josefinslab-semibold";
+	padding-bottom: 12px;
+	font-size: 1.3em;
+	color: #6a6a6a;
+	text-align: center;
 }
 

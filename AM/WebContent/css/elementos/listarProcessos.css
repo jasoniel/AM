@@ -10,18 +10,19 @@ ul li{
 	float: right;
 	
 }
-
 #conteudo_bottom{
 	
 	width: 596px;
-	height: 200px;
+	height: 250px;
 	float: right;
 	margin-top:48px;
 	
 }
 
+
+
 #idFormListar{
-	margin-left: 0px;
+	margin-left: 36px;
 	margin-top:33px;
 	width: 100%;
 	
@@ -40,6 +41,6 @@ ul li{
 }
 table{
 	margin:auto;
-	
 }
+
 

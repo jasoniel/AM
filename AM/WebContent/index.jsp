@@ -16,13 +16,9 @@
 	<!-- test -->
 	<div id="todo" >
 
-		<div id="topo">
-
-			<div id="logo"></div>
-
-		</div>
+	
 		
-		<div id="meio"> 
+		
 			<div id="conteudo_meio">
 			
 				<form name="form_login" action="autentica" method="post" id="idFormLogin">
@@ -38,10 +34,9 @@
 			
 			
 			</div>
-		</div>
 		
-		<div id="rodape"></div>
-	
+		
+		
 	</div>
 	
 	
@@ -50,7 +45,6 @@
 	<script src="js/bootstrap.min.js"></script>
 	
 	
-<!-- VAi se Fu -->
 	
   </body>
 </html>

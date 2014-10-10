@@ -6,10 +6,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 <style><%@include file="/css/style.css" %></style>
+<style><%@include file="/css/elementos/topo.css" %></style>
 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 </head>
 <body>
-	<div id="logo"><img src="img/libra.png"></div>
+	<div id="logo"><img src="img/libra.png" id="img-logo"></div>
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 </body>

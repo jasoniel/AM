@@ -35,7 +35,7 @@ a:focus {
 }
 
 a:hover,a:active {
-	outline: 0
+	outline: 0;
 }
 
 sub,sup {
@@ -195,13 +195,13 @@ body {
 }
 
 a {
-	color: #08c;
+	color: #8D8D8D;
 	text-decoration: none
 }
 
 a:hover {
-	color: #005580;
-	text-decoration: underline
+	color: #FFFFFF;
+	text-decoration: none
 }
 
 .img-rounded {
@@ -3486,10 +3486,13 @@ button.btn.btn-mini,input[type="submit"].btn.btn-mini {
 .nav>li>a {
 	display: block
 }
-
+/*menu bootstrap*/
 .nav>li>a:hover {
+	
 	text-decoration: none;
-	background-color: black;
+	background-color: #2E2E2E;
+	font-size: 15px;
+	
 }
 
 .nav>.pull-right {
@@ -3520,12 +3523,13 @@ button.btn.btn-mini,input[type="submit"].btn.btn-mini {
 .nav-list>li>a,.nav-list .nav-header {
 	margin-right: -15px;
 	margin-left: -15px;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5)
+	/*text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5)*/
 }
 
 .nav-list>li>a {
 	padding: 3px 15px
 }
+
 
 .nav-list>.active>a,.nav-list>.active>a:hover {
 	color: #fff;
