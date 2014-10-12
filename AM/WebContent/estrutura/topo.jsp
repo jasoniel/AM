@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 <style><%@include file="/css/style.css" %></style>
 <style><%@include file="/css/elementos/topo.css" %></style>
+<script><%@include file="topo.js" %></script>
+
 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 </head>
 <body>
@@ -15,14 +17,19 @@
 	
 		<div id="conteudo_topo_direito">
 
+
+		
+		<div id="data_topo_direito"><div id="horah5"></div><div id="datah5"></div></div>
+		
 		<div id="menu_conteudo_topo_direito">
 		
+		
 			<div class="btn-group">
-				<button class="btn btn-inverse" disabled href="#"><i class="icon-user icon-white"></i> Usuário</button>
+				<button class="btn btn-inverse" disabled href="#"><i class="icon-user icon-white"></i> Olá, ${usuario.login}</button>
 				 <a class="btn btn-inverse dropdown-toggle" data-toggle="dropdown"
 					href="#"><span class="caret"></span></a>
 				<ul class="dropdown-menu">
-					<li><a href="#"><i class="icon-ban-circle"></i> Logout</a></li>
+					<li><a href="logout"><i class="icon-ban-circle"></i> Sair</a></li>
 					
 				</ul>
 			</div>

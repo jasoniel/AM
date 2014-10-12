@@ -11,8 +11,16 @@ public class ConnectionManager {
 	public static ConnectionManager instance;
 	
 	
+	public ConnectionManager() throws ClassNotFoundException {
+
+		//
+		//Registra o driver JDBC (neste caso o driver de conexao para o Oracle)
+		//
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		
+	}
 	
-	public static ConnectionManager getInstance(){
+	public static ConnectionManager getInstance() throws ClassNotFoundException{
 		
 		if (instance == null){
 			instance = new ConnectionManager();

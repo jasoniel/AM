@@ -93,5 +93,14 @@ h3{
 	float: right;
 }
 #menu_conteudo_topo_direito{
-	margin:16px 0px 0px 479px;
+	margin:16px 0px 0px 422px;
+	width: 152px;
+	
+}
+#data_topo_direito{
+	
+	width: 300px;
+	height: 46px;
+	float: left;
+	margin-left: 117px;
 }

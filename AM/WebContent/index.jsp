@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -22,12 +23,16 @@
 			<div id="conteudo_meio">
 			
 				<form name="form_login" action="autentica" method="post" id="idFormLogin">
+				
 					<fieldset><legend>Indentifique-se</legend>
-					login: <input type="text" name="login" id="idLogin" /><br/>
-					senha: <input type="password" name="passoword" id="id_passoword" /><br/>
+						
+					login: <input type="text" name="login" id="idLogin" required /><br/>
+					senha: <input type="password" name="password" id="idPassword" /><br/>
 					<button type="submit" class="btn btn-success" id="idEnviar">Entrar</button>
 					<button type="reset" class="btn btn-danger">Limpar</button>
+					
 					</fieldset>
+					
 				</form>
 			
 			
