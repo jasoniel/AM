@@ -6,7 +6,7 @@ public class Advogado extends Pessoa{
 	private int nrOab;
 	private int nrCpf;
 	private String nrRg;
-	private HoraAdvogado horaAdvogado ;
+	private HoraAdvogado vlHoraAdvogado ;
 	
 
 	
@@ -14,10 +14,10 @@ public class Advogado extends Pessoa{
 	}
 	
 	public HoraAdvogado getHoraAdvogado() {
-		return horaAdvogado;
+		return vlHoraAdvogado;
 	}
 	public void setHoraAdvogado(HoraAdvogado horaAdvogado) {
-		this.horaAdvogado = horaAdvogado;
+		this.vlHoraAdvogado = horaAdvogado;
 	}
 	
 	public int getNrOab() {

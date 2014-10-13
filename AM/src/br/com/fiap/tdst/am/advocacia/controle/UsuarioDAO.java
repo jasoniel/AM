@@ -24,27 +24,34 @@ public class UsuarioDAO {
 
 	boolean verifica(Usuario usuario) throws SQLException{
 		
-		String teste = "select * from usuarios where usuario=?";
+		if (usuario.getLogin()=="" || usuario.getSenha()==""){
+			return false;
+		}
+		
+		String teste = "select usuario,senha from usuarios where usuario=?";
 				
 		PreparedStatement stmt = conn.prepareStatement(teste);
 		
 		stmt.setString(1, usuario.getLogin());
 		ResultSet rs = stmt.executeQuery();
 		
-		String t=null;
+		String login=null;
+		String senha=null;
+		
 		
 		while(rs.next()){
+		
 			
-	
-			t= rs.getString("senha");
+			login = rs.getString("usuario");
+			senha= rs.getString("senha");
 			
 		}
 		
-		if(t == null){
+		if(login == null || senha ==null){
 			return false;
-		}
-		
-		if(t.contains(usuario.getSenha())){
+		}else if((login.contains(usuario.getLogin()))
+				&& 
+				senha.contains(usuario.getSenha())){
 			return true;
 		}else
 			

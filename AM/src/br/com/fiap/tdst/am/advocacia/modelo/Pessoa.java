@@ -2,16 +2,27 @@ package br.com.fiap.tdst.am.advocacia.modelo;
 
 public abstract class Pessoa {
 
-	private int cdPessoa;
+	private long cdPessoa;
+	private String nmPessoa;
 	private String dsEmail;
 	private String dsPassword;
 	private FonePessoa FonePessoa;
+	private Endereco endereco;
 	
-	public int getCdPessoa() {
+	
+	public Pessoa(){}
+	
+	public long getCdPessoa() {
 		return cdPessoa;
 	}
-	public void setCdPessoa(int cdPessoa) {
+	public void setCdPessoa(long cdPessoa) {
 		this.cdPessoa = cdPessoa;
+	}
+	public String getNmPessoa() {
+		return nmPessoa;
+	}
+	public void setNmPessoa(String nmPessoa) {
+		this.nmPessoa = nmPessoa;
 	}
 	public String getDsEmail() {
 		return dsEmail;
@@ -25,10 +36,15 @@ public abstract class Pessoa {
 	public void setDsPassword(String dsPassword) {
 		this.dsPassword = dsPassword;
 	}
-	
-	@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		return this.cdPessoa+" "+this.dsEmail;
+	public FonePessoa getFonePessoa() {
+		return FonePessoa;
 	}
+	public void setFonePessoa(FonePessoa fonePessoa) {
+		FonePessoa = fonePessoa;
+	}
+	
+	
+	
+	
+
 }

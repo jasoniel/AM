@@ -56,7 +56,7 @@ public class ControleProcessos extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {
 		// TODO Auto-generated method stub
 		
-	UsuarioDAO dao = new UsuarioDAO();
+		UsuarioDAO dao = new UsuarioDAO();
 		
 		HttpSession session = request.getSession();
 		
@@ -64,15 +64,17 @@ public class ControleProcessos extends HttpServlet {
 		
 		usuario.setLogin(request.getParameter("login"));
 		usuario.setSenha(request.getParameter("password"));
-	
+
 				try{
 					if(dao.verifica(usuario)==false){
 						response.sendRedirect("index.jsp");
+						
 						System.out.println("false");
-					}
-					
-					if(dao.verifica(usuario)){
+						
+					}else if(dao.verifica(usuario)){
+						
 						System.out.println("true");
+						
 						session.setAttribute("usuario", usuario);
 						
 						response.sendRedirect("principal.jsp");
