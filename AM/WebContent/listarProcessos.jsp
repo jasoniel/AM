@@ -44,7 +44,7 @@
 					
 						<form name ="form_listar_processos" id="idFormListar" method="get" action="listaProcessos" >
 							<fieldset>
-								Número do Processo: <input type="text" name="nrProcesso" required  id="idNrProcesso" /><br/>
+								Número do Processo: <input type="number" name="nrProcesso" required  id="idNrProcesso" /><br/>
 								Nome do Cliente: <input type="text" name="nomeCliente" required  id="idNomeCliente"  ><br/>
 								Período: <input type="date" name="dtIncialPeriodo" id="idDtInicial" required="required">
 								até <input type="date" name="dtFinallPeriodo" id="idDtFinal" required="required"><br/>

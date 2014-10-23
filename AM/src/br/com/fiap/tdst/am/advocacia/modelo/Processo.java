@@ -3,7 +3,7 @@ package br.com.fiap.tdst.am.advocacia.modelo;
 public class Processo {
 	
 	
-	private int nrProcesso;
+	private long nrProcesso;
 	private long cdPessoa;
 	
 	

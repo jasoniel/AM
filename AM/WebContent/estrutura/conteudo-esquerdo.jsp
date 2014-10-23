@@ -1,3 +1,4 @@
+<%@page import="br.com.fiap.tdst.am.advocacia.controle.Usuario"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -8,12 +9,18 @@
 <style><%@include file="/css/style.css" %></style>
 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 </head>
-<body>
+<body>	
+
+		<%
+			Usuario usuario = (Usuario)request.getSession().getAttribute("usuarioLogado");
+			
+		%>
 	
 				
 				<div id="menu">
 				<center><h3>Menu</h3></center>
 				<ul class="nav nav-list">
+		
 					<li ><a href="listarProcessos.jsp">Listar Processos</a></li>
 					<li><a href="cadastrarProcessos.jsp">Cadastrar Processos</a></li>
 					<li><a href="#">Cadastrar Tipo de Tarefa</a></li>

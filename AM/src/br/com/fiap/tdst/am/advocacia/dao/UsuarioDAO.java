@@ -1,4 +1,4 @@
-package br.com.fiap.tdst.am.advocacia.controle;
+package br.com.fiap.tdst.am.advocacia.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,13 +6,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import br.com.fiap.tdst.am.advocacia.connection.ConnectionManager;
+import br.com.fiap.tdst.am.advocacia.controle.Usuario;
 
 public class UsuarioDAO {
 
 	
-	Connection conn = null;
+	private Connection conn = null;
 	
-	UsuarioDAO(){
+	public UsuarioDAO(){
 		try {
 			this.conn =new ConnectionManager().getInstance().getConnection();
 		} catch (ClassNotFoundException e) {
@@ -22,30 +23,26 @@ public class UsuarioDAO {
 	}
 	
 
-	boolean verifica(Usuario usuario) throws SQLException{
+	public boolean verifica(Usuario usuario) throws SQLException{
 		
-		if (usuario.getLogin()=="" || usuario.getSenha()==""){
-			return false;
-		}
-		
-		String teste = "select usuario,senha from usuarios where usuario=?";
+
+		String select = "select * from usuarios where usuario=? ";
 				
-		PreparedStatement stmt = conn.prepareStatement(teste);
+		PreparedStatement stmt = conn.prepareStatement(select);
 		
 		stmt.setString(1, usuario.getLogin());
+		
 		ResultSet rs = stmt.executeQuery();
 		
 		String login=null;
 		String senha=null;
 		
-		
 		while(rs.next()){
-		
 			
-			login = rs.getString("usuario");
-			senha= rs.getString("senha");
-			
+			login= rs.getString("usuario");
+			senha = rs.getString("senha");
 		}
+		
 		
 		if(login == null || senha ==null){
 			return false;

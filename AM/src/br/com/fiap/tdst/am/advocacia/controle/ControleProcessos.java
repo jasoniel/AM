@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import br.com.fiap.tdst.am.advocacia.dao.UsuarioDAO;
+
 /**
  * Servlet implementation class ControleProcessos
  */
@@ -30,64 +32,45 @@ public class ControleProcessos extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
-		HttpSession session = request.getSession();
-		session.invalidate();
-		
+	
+		request.getSession().invalidate();
 		response.sendRedirect("index.jsp");
-		
-		/*
-		 * Testando session  redirecionando para a propria pagina
-		 * 
-		String s = request.getParameter("nrProcesso");
-		
-		request.getSession().setAttribute("teste", s);
-		
-		response.sendRedirect("listarProcessos.jsp");
-		
-		System.out.println(s);
-		*/
-		
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException,IOException {
 		// TODO Auto-generated method stub
 		
+		Usuario usuario = new Usuario();
 		UsuarioDAO dao = new UsuarioDAO();
 		
-		HttpSession session = request.getSession();
 		
-		Usuario usuario = new Usuario();
+		HttpSession session =request.getSession();
 		
 		usuario.setLogin(request.getParameter("login"));
 		usuario.setSenha(request.getParameter("password"));
-
-				try{
-					if(dao.verifica(usuario)==false){
-						response.sendRedirect("index.jsp");
-						
-						System.out.println("false");
-						
-					}else if(dao.verifica(usuario)){
-						
-						System.out.println("true");
-						
-						session.setAttribute("usuario", usuario);
-						
-						response.sendRedirect("principal.jsp");
-						
-					}
-					
+		
+		
+		if(!(usuario.getLogin().isEmpty()|| usuario.getSenha().isEmpty())){
+			try {
+				if(dao.verifica(usuario)==true){
+				
+					session.setAttribute("usuarioLogado", usuario);
+					response.sendRedirect("principal.jsp");
+				}else
+					response.sendRedirect("index.jsp");
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 		
-				
-			
+		}
+		
+		
+		
 	}
 
 }

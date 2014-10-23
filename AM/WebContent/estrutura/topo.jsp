@@ -25,7 +25,7 @@
 		
 		
 			<div class="btn-group">
-				<button class="btn btn-inverse" disabled href="#"><i class="icon-user icon-white"></i> Olá, ${usuario.login}</button>
+				<button class="btn btn-inverse" disabled href="#"><i class="icon-user icon-white"></i> Olá, ${usuarioLogado.login}</button>
 				 <a class="btn btn-inverse dropdown-toggle" data-toggle="dropdown"
 					href="#"><span class="caret"></span></a>
 				<ul class="dropdown-menu">
@@ -33,6 +33,7 @@
 					
 				</ul>
 			</div>
+			
 		</div>
 	</div>
 		
