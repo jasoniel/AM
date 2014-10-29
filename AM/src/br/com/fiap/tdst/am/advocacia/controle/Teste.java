@@ -1,8 +1,10 @@
 package br.com.fiap.tdst.am.advocacia.controle;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import br.com.fiap.tdst.am.advocacia.beans.Processo;
+import br.com.fiap.tdst.am.advocacia.beans.TipoDespesa;
 import br.com.fiap.tdst.am.advocacia.dao.OracleDAOFactory;
 import br.com.fiap.tdst.am.advocacia.dao.impl.OracleProcessoDAO;
 
@@ -24,10 +26,13 @@ class Teste{
 		Processo processo = dao.getProcessoId(26);
 		
 		
+		List<TipoDespesa> listas = OracleDAOFactory.getOracleTipoDespesaDAO().getListaTipoDespesa();
 		
 		
-		
-		
+		for (TipoDespesa tipoDespesa : listas) {
+			
+			System.out.println(tipoDespesa.getId()+" "+tipoDespesa.getDescricao());
+		}
 		
 		
 		/*

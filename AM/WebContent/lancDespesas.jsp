@@ -56,17 +56,20 @@
 										Valor da despesa: 
 										<input id="idValorDespesa" type="text" name="valorDespesa" required >
 									</div>
-									<div id ="idDivSelectDespesa">									
+									
+										<div id ="idDivSelectDespesa">									
 										Despesas:<select name="selectTipoDespesa" id="idSelectDespesa" required>
-       											<option value="" >Selecione</option>
-       											<option value="1">Xérox</option>
-       											<option value="2">Declaração</option> 
-       											<option value="3">Autenticações</option> 
-       											<option value="4">Passagem Aerea</option>
-       											<option value="5">Hospedagens</option>       											
-       											<option value="6">Outros</option>
-										</select>
-									</div>
+												<option value="" >Selecione</option>
+										<c:forEach items="${listaTipoDespesa}" var="tipoDespesa">
+										
+												<option value="${tipoDespesa.id }">${tipoDespesa.descricao}</option>
+												
+										</c:forEach>
+										
+												</select>
+								
+										</div>
+									
 									<div id ="idDivObs" >
 										Observações:
 										<textarea id="idObs" name="obs"></textarea>

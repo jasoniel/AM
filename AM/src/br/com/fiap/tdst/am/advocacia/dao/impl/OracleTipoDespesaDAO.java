@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import br.com.fiap.tdst.am.advocacia.beans.TipoDespesa;
 import br.com.fiap.tdst.am.advocacia.connection.ConnectionManager;
@@ -18,6 +20,28 @@ public class OracleTipoDespesaDAO {
 	public OracleTipoDespesaDAO() throws ClassNotFoundException{
 		this.conn = ConnectionManager.getInstance().getConnection();
 	}
+	
+	public List<TipoDespesa> getListaTipoDespesa() throws SQLException{
+		
+		String select = "select CD_TIPO_DESPESA from T_AM_TIPO_DESPESA";
+		
+		PreparedStatement stmt = conn.prepareStatement(select);
+		ResultSet rs =stmt.executeQuery();
+		List<TipoDespesa> lista = new ArrayList<>();
+		
+		
+		while(rs.next()){
+
+			lista.add(getTipoDespesaId(rs.getLong("CD_TIPO_DESPESA")));
+		}
+		
+		
+		return lista;
+		
+		
+	}
+	
+	
 	
 	
 	public TipoDespesa getTipoDespesaId(long id) throws SQLException{

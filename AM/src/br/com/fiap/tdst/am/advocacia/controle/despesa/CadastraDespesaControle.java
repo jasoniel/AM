@@ -2,6 +2,7 @@ package br.com.fiap.tdst.am.advocacia.controle.despesa;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -41,6 +42,7 @@ public class CadastraDespesaControle extends HttpServlet{
 		TipoDespesa tipoDespesa = null;
 		LancaDespesaBO lancaDespesaBO = null;
 		OracleTipoDespesaDAO tipoDespesaDAO=null;
+		
 		long id = Long.parseLong(request.getParameter("selectTipoDespesa"));
 		
 		try {
@@ -104,14 +106,18 @@ public class CadastraDespesaControle extends HttpServlet{
 		
 		OracleProcessoDAO processoDAO =null;
 		try {
-			 processoDAO = new OracleProcessoDAO();
+			 processoDAO = OracleDAOFactory.getOracleProcessoDAO();
 		} catch (ClassNotFoundException e) {
 			
 			e.printStackTrace();
 		}
+		
 		Processo processo = null;
+		List<TipoDespesa> listaTipoDespesa =null;
+		 
 		try {
 			 processo =processoDAO.getProcessoId(Integer.parseInt(request.getParameter("idProcesso")));
+			 listaTipoDespesa =OracleDAOFactory.getOracleTipoDespesaDAO().getListaTipoDespesa();
 			 System.out.println(request.getParameter("idProcesso"));
 		} catch (NumberFormatException | ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
@@ -119,7 +125,7 @@ public class CadastraDespesaControle extends HttpServlet{
 		} 
 		
 		
-		
+		request.getSession().setAttribute("listaTipoDespesa", listaTipoDespesa);
 		request.getSession().setAttribute("processoDespesas", processo);
 		response.sendRedirect("lancDespesas.jsp");
 		
