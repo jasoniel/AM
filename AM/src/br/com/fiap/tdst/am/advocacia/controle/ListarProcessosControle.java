@@ -4,15 +4,18 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import br.com.fiap.tdst.am.advocacia.beans.Cliente;
 import br.com.fiap.tdst.am.advocacia.beans.Processo;
-import br.com.fiap.tdst.am.advocacia.dao.OracleClienteDAO;
-import br.com.fiap.tdst.am.advocacia.dao.OracleProcessoDAO;
+import br.com.fiap.tdst.am.advocacia.dao.OracleDAOFactory;
+import br.com.fiap.tdst.am.advocacia.dao.impl.OracleClienteDAO;
+import br.com.fiap.tdst.am.advocacia.dao.impl.OracleProcessoDAO;
 import br.com.fiap.tdst.am.advocacia.utils.FormatDate;
 
 @WebServlet("/listaProcessos")
@@ -34,15 +37,23 @@ public class ListarProcessosControle extends HttpServlet{
 		List<Processo>	lista = new ArrayList<>();
 		
 		
+		
+		
+		
+		boolean verificaProcesso=false;
+		
 		System.out.println(request.getParameter("nrProcesso"));
 		try {
-			processoDAO = new OracleProcessoDAO();
-			clienteDAO =  new OracleClienteDAO();
-		} catch (ClassNotFoundException e2) {
+			processoDAO = OracleDAOFactory.getOracleProcessoDAO();
+			clienteDAO =  OracleDAOFactory.getOracleClienteDAO();
+			verificaProcesso =processoDAO.verificaProcesso(Long.parseLong(request.getParameter("nrProcesso")));
+			
+		} catch (ClassNotFoundException |SQLException e2) {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
 		}
 		
+		 request.getSession().setAttribute("vProcesso", verificaProcesso);
 		 
 		if(request.getParameter("nrProcesso")!= null && !request.getParameter("nrProcesso").isEmpty()){
 			

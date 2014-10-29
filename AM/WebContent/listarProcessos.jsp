@@ -52,10 +52,19 @@
 					pattern="^[a-zA-Z]{1,}$ \s  {1,} $"
 					-->
 					
+			
+				
 						<form name ="form_listar_processos" id="idFormListar" method="post" action="listaProcessos" >
 							<fieldset>
-								Número do Processo: <input type="number" name="nrProcesso"   id="idNrProcesso" /><br/>
-								Nome do Cliente: <input type="text" name="nomeCliente"   id="idNomeCliente"  ><br/>
+								Número do Processo: <input type="number" name="nrProcesso"   id="idNrProcesso" />
+									<c:if test="${vProcesso eq false}">
+										<font color="red">Processo não
+											exite
+										</font>
+										
+									</c:if>
+									<br/>
+							Nome do Cliente: <input type="text" name="nomeCliente"   id="idNomeCliente"  ><br/>
 								Período: <input type="date" name="dtIncialPeriodo" id="idDtInicial" >
 								até <input type="date" name="dtFinalPeriodo" id="idDtFinal"><br/>
 								<button type="submit" class="btn btn-inverse" id="idBtnBuscar"><i class="icon-search"></i> Buscar</button>

@@ -11,15 +11,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.fiap.tdst.am.advocacia.beans.LancaDespesa;
-import br.com.fiap.tdst.am.advocacia.dao.OracleLancaDespesasDAO;
-import br.com.fiap.tdst.am.advocacia.dao.OracleProcessoDAO;
+import br.com.fiap.tdst.am.advocacia.dao.OracleDAOFactory;
+import br.com.fiap.tdst.am.advocacia.dao.impl.OracleLancaDespesasDAO;
+import br.com.fiap.tdst.am.advocacia.dao.impl.OracleProcessoDAO;
 
 @WebServlet("/listaDespesa")
 public class ListaDespesaControle extends HttpServlet {
 
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 
 	@Override
@@ -30,8 +29,8 @@ public class ListaDespesaControle extends HttpServlet {
 		OracleLancaDespesasDAO lancaDespesaDAO= null;
 		OracleProcessoDAO processoDAO = null;
 		try {
-			lancaDespesaDAO = new OracleLancaDespesasDAO();
-			processoDAO= new OracleProcessoDAO();
+			lancaDespesaDAO =OracleDAOFactory.getOracleLancaDespesasDAO();
+			processoDAO= OracleDAOFactory.getOracleProcessoDAO();
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

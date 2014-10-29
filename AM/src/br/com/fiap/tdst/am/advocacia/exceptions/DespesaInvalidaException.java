@@ -1,12 +1,12 @@
 package br.com.fiap.tdst.am.advocacia.exceptions;
 
-public class DespesaVaziaException extends Exception{
+public class DespesaInvalidaException extends Exception{
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	public DespesaVaziaException(){
+	public DespesaInvalidaException(){
 		super("Despesa não pode ser nula");
 	}
 }

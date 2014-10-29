@@ -8,8 +8,12 @@
 <title>Lancar Despesas</title>
 <style><%@include file="css/style.css" %></style>
 <style><%@include file="css/elementos/lancDespesas.css" %></style>
+<script><%@include file="js/lancaDespesa.js" %></script>
+
+<script src="js/lancaDespesa.js"></script>
 
 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+
 </head>
 <body>
 
@@ -50,7 +54,7 @@
 									</div>
 									<div id="idDivValorDespesa">
 										Valor da despesa: 
-										<input id="idValorDespesa" type="text" name="valorDespesa" required>
+										<input id="idValorDespesa" type="text" name="valorDespesa" required >
 									</div>
 									<div id ="idDivSelectDespesa">									
 										Despesas:<select name="selectTipoDespesa" id="idSelectDespesa" required>
@@ -88,6 +92,7 @@
 	
 	 <script src="http://code.jquery.com/jquery-latest.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	
 	
   </body>
 </html>

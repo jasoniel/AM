@@ -10,7 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.fiap.tdst.am.advocacia.beans.LancaDespesa;
-import br.com.fiap.tdst.am.advocacia.dao.OracleLancaDespesasDAO;
+import br.com.fiap.tdst.am.advocacia.dao.OracleDAOFactory;
+import br.com.fiap.tdst.am.advocacia.dao.impl.OracleLancaDespesasDAO;
 
 @WebServlet("/deletaDespesa")
 public class DeletaDespesaControle extends HttpServlet{
@@ -26,7 +27,7 @@ public class DeletaDespesaControle extends HttpServlet{
 		
 		OracleLancaDespesasDAO lancaDespesaDAO = null;
 		try {
-			lancaDespesaDAO = new OracleLancaDespesasDAO();
+			lancaDespesaDAO = OracleDAOFactory.getOracleLancaDespesasDAO();
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -1,4 +1,4 @@
-package br.com.fiap.tdst.am.advocacia.dao;
+package br.com.fiap.tdst.am.advocacia.dao.impl;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -13,7 +13,7 @@ import br.com.fiap.tdst.am.advocacia.beans.Cliente;
 import br.com.fiap.tdst.am.advocacia.beans.Processo;
 import br.com.fiap.tdst.am.advocacia.connection.ConnectionManager;
 
-public class OracleProcessoDAO {
+public final class  OracleProcessoDAO {
 
 	private Connection conn = null;
 	
@@ -22,7 +22,17 @@ public class OracleProcessoDAO {
 			this.conn=ConnectionManager.getInstance().getConnection();
 	}
 
-
+	public boolean verificaProcesso(long id) throws SQLException, ClassNotFoundException{
+		
+		
+		Processo processo = getProcessoId(id);
+		if(processo.getNumeroProcesso()==0){
+			return false;
+		}else if(processo !=null){
+			return true;
+		}
+		return false;
+	}
 	
 	
 	
@@ -89,6 +99,8 @@ public class OracleProcessoDAO {
 		stmt.setLong(1, id);
 		ResultSet  rs =stmt.executeQuery();
 		
+		
+	
 		Processo processo = new Processo();
 		
 		while(rs.next()){

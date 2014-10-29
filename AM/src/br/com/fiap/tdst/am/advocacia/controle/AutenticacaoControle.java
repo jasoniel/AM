@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import br.com.fiap.tdst.am.advocacia.beans.Usuario;
-import br.com.fiap.tdst.am.advocacia.dao.OracleUsuarioDAO;
+import br.com.fiap.tdst.am.advocacia.dao.impl.OracleUsuarioDAO;
 
 /**
  * Servlet implementation class ControleProcessos

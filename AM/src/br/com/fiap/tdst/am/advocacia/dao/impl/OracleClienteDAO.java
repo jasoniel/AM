@@ -1,4 +1,4 @@
-package br.com.fiap.tdst.am.advocacia.dao;
+package br.com.fiap.tdst.am.advocacia.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

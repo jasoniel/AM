@@ -2,6 +2,7 @@ package br.com.fiap.tdst.am.advocacia.controle.despesa;
 
 import java.io.IOException;
 import java.sql.SQLException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,11 +13,14 @@ import br.com.fiap.tdst.am.advocacia.beans.LancaDespesa;
 import br.com.fiap.tdst.am.advocacia.beans.Processo;
 import br.com.fiap.tdst.am.advocacia.beans.TipoDespesa;
 import br.com.fiap.tdst.am.advocacia.bo.LancaDespesaBO;
-import br.com.fiap.tdst.am.advocacia.dao.OracleProcessoDAO;
-import br.com.fiap.tdst.am.advocacia.dao.OracleTipoDespesaDAO;
+import br.com.fiap.tdst.am.advocacia.dao.OracleDAOFactory;
+import br.com.fiap.tdst.am.advocacia.dao.impl.OracleProcessoDAO;
+import br.com.fiap.tdst.am.advocacia.dao.impl.OracleTipoDespesaDAO;
 import br.com.fiap.tdst.am.advocacia.exceptions.DataInvalidaException;
-import br.com.fiap.tdst.am.advocacia.exceptions.DespesaVaziaException;
+import br.com.fiap.tdst.am.advocacia.exceptions.DespesaInvalidaException;
 import br.com.fiap.tdst.am.advocacia.exceptions.ProcessoInvalidoException;
+import br.com.fiap.tdst.am.advocacia.exceptions.ProcessoNaoExistenteException;
+import br.com.fiap.tdst.am.advocacia.exceptions.TipoDespesaInvalidaException;
 import br.com.fiap.tdst.am.advocacia.exceptions.ValorInvalidoException;
 import br.com.fiap.tdst.am.advocacia.utils.FormatDate;
 
@@ -38,10 +42,11 @@ public class CadastraDespesaControle extends HttpServlet{
 		LancaDespesaBO lancaDespesaBO = null;
 		OracleTipoDespesaDAO tipoDespesaDAO=null;
 		long id = Long.parseLong(request.getParameter("selectTipoDespesa"));
+		
 		try {
 			lancaDespesaBO = new LancaDespesaBO();
-			 tipoDespesaDAO = new OracleTipoDespesaDAO();
-			 tipoDespesa=tipoDespesaDAO.getTipoDespesaId(id);
+			 tipoDespesaDAO =OracleDAOFactory.getOracleTipoDespesaDAO();
+			 tipoDespesa = tipoDespesaDAO.getTipoDespesaId(id);
 		} catch (ClassNotFoundException | SQLException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -59,20 +64,30 @@ public class CadastraDespesaControle extends HttpServlet{
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
+	
 		lancaDespesa.setDataDespesa(FormatDate.getData(request.getParameter("dataDespesa")));
-		lancaDespesa.setValorDespesa(Double.parseDouble(request.getParameter("valorDespesa")));
+		
+		if(request.getParameter("valorDespesa").isEmpty() || request.getParameter("valorDespesa")==null){
+			lancaDespesa.setValorDespesa(0);
+		}else{
+			lancaDespesa.setValorDespesa(Double.parseDouble(request.getParameter("valorDespesa")));
+		}
 		lancaDespesa.setTipoDespesa(tipoDespesa);
 		lancaDespesa.setDescricao(request.getParameter("obs"));
 		
 		
 		
-		
+		System.out.println(lancaDespesa.getId());
 			try {
 				lancaDespesaBO.incluirDespesa(lancaDespesa);
-			} catch (SQLException | DespesaVaziaException
+			} catch (SQLException | DespesaInvalidaException
 					| ProcessoInvalidoException | DataInvalidaException
-					| ValorInvalidoException e) {
+					| ValorInvalidoException | ClassNotFoundException |
+					ProcessoNaoExistenteException | TipoDespesaInvalidaException e) {
+				
+				
 				System.err.println(e.getMessage());
+				e.printStackTrace();
 			}
 	
 		

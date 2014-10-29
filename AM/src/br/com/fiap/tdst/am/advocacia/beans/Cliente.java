@@ -2,7 +2,7 @@ package br.com.fiap.tdst.am.advocacia.beans;
 
 import java.io.Serializable;
 
-import br.com.fiap.tdst.am.advocacia.dao.OracleLancaDespesasDAO;
+import br.com.fiap.tdst.am.advocacia.dao.impl.OracleLancaDespesasDAO;
 
 public final class Cliente extends Pessoa implements Serializable {
 	
