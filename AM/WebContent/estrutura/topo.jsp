@@ -26,10 +26,9 @@
 		
 			<div class="btn-group">
 				<button class="btn btn-inverse" disabled href="#"><i class="icon-user icon-white"></i> Olá, ${usuarioLogado.login}</button>
-				 <a class="btn btn-inverse dropdown-toggle" data-toggle="dropdown"
-					href="#"><span class="caret"></span></a>
+				 <a class="btn btn-inverse dropdown-toggle" data-toggle="dropdown"href="#"><span class="caret"></span></a>
 				<ul class="dropdown-menu">
-					<li><a href="logout"><i class="icon-ban-circle"></i> Sair</a></li>
+					<li ><a href="logout"><i class="icon-ban-circle"></i> Sair</a></li>
 					
 				</ul>
 			</div>

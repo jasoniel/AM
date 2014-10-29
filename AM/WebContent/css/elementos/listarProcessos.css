@@ -5,7 +5,7 @@ ul li{
 
 #conteudo_top{
 	
-	width: 596px;
+	width: 592px;
 	height: 200px;
 	float: right;
 	margin-top:82px;
@@ -15,12 +15,23 @@ ul li{
 #conteudo_bottom{
 	
 	width: 596px;
-	height: 220px;
+	height: 389px;;
 	float: right;
 	margin-top:48px;
-	border:1px solid block;
-}
 
+
+	
+}
+#idDivTitulo{
+	position: absolute;
+	width: 579px;
+	
+}
+#tabela{
+	margin-top: 40px;
+	overflow: scroll;
+	height: 350px
+}
 
 
 #idFormListar{
@@ -43,6 +54,26 @@ ul li{
 }
 table{
 	margin:auto;
+
 }
 
-
+#btnLista{
+	/*width: 93px;
+	height: 22px;*/
+	font-size: 9px;
+	text-align:left;
+	height: 12px;
+	width: 67px;
+	
+}
+#btnCons{
+	margin-left: 10px;
+	height: 12px;
+	width: 79px;
+	font-size: 9px;
+	text-align: right;
+}
+.dropdown-menu>li>a:hover{
+	
+	
+}

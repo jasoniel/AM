@@ -30,7 +30,7 @@ public class ConnectionManager {
 	}
 	
 	
-	public Connection getConnection(){
+	public  Connection getConnection(){
 		
 		String login = "OPS$RM71357";
 		String senha = "271294";

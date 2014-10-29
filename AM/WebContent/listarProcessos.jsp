@@ -1,3 +1,9 @@
+<%@page import="br.com.fiap.tdst.am.advocacia.beans.Processo"%>
+<%@page import="br.com.fiap.tdst.am.advocacia.beans.Cliente"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.HashMap"%>
+<%@page import="java.util.Map"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -10,6 +16,9 @@
 <style><%@include file="css/elementos/listarProcessos.css" %></style>
 <script ><%@include file="js/listarProcessos.js" %></script>
 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+<style>
+
+</style>
 </head>
 <body>
 
@@ -37,17 +46,18 @@
 				
 					<div id="conteudo_top">
 					
-					<!--função para mudar mensagem do required oninvalid="this.setCustomValidity('Messagem')" 
-					
+					<!--função para mudar mensagem do required :)   oninvalid="this.setCustomValidity('Messagem')" 
+					onMouseOver="this.style.background='red'"
+															onMouseOut="this.style.background='white'"
 					pattern="^[a-zA-Z]{1,}$ \s  {1,} $"
 					-->
 					
-						<form name ="form_listar_processos" id="idFormListar" method="get" action="listaProcessos" >
+						<form name ="form_listar_processos" id="idFormListar" method="post" action="listaProcessos" >
 							<fieldset>
-								Número do Processo: <input type="number" name="nrProcesso" required  id="idNrProcesso" /><br/>
-								Nome do Cliente: <input type="text" name="nomeCliente" required  id="idNomeCliente"  ><br/>
-								Período: <input type="date" name="dtIncialPeriodo" id="idDtInicial" required="required">
-								até <input type="date" name="dtFinallPeriodo" id="idDtFinal" required="required"><br/>
+								Número do Processo: <input type="number" name="nrProcesso"   id="idNrProcesso" /><br/>
+								Nome do Cliente: <input type="text" name="nomeCliente"   id="idNomeCliente"  ><br/>
+								Período: <input type="date" name="dtIncialPeriodo" id="idDtInicial" >
+								até <input type="date" name="dtFinalPeriodo" id="idDtFinal"><br/>
 								<button type="submit" class="btn btn-inverse" id="idBtnBuscar"><i class="icon-search"></i> Buscar</button>
 								<button type="reset" class="btn btn-inverse" id="btnLimpar">Limpar</button>
 							</fieldset>
@@ -55,26 +65,77 @@
 					
 					</div>
 					
-					
+				<c:if test="${not empty clienteLista  }" >
 					<div id="conteudo_bottom" >
 					
-						<table class="table">
+						<div id="idDivTitulo">
+						<table class="table"  >
+							
 							<tr>
-								<th>Número</th>
-								<th>Descrição</th>
-								<th>Cliente</th>
-								<th>Ação</th>
+								<th style="width:10px">Número</th>
+								<th style="width:1px">Descrição</th>
+								<th style="width: 134px; text-align: center;">Cliente</th>
+								<th style="text-align: center;">Ação</th>
 							</tr>
-						</table>
+							
+							
+							
+							</table>
+							</div>
+							
+						<div id="tabela">
+							<table class="table table-hover" id="idTable">
+							
+							
+								<c:forEach var="processo" items="${clienteLista}">
+									<tr>
+									<td style="width: 45px;">${processo.numeroProcesso}</td>
+									<td>${processo.descricaoProcesso}</td>
+									<td>${processo.cliente.razaoSocial }</td>
+									<td style="width: 257px;">
 
+
+
+											<div class="btn-group">
+												<button class="btn">Despesa</button>
+												<button class="btn dropdown-toggle" data-toggle="dropdown">
+													<span class="caret"></span>
+												</button>
+												<ul class="dropdown-menu">
+													<li><a  href="lancaDespesa?idProcesso=${processo.numeroProcesso}" 	>Lançar Depesas</a></li>
+													<li><a href="listaDespesa?idProcesso=${processo.numeroProcesso}" >Consultar Depesas</a></li>
+												</ul>
+											</div> 
+											<div class="btn-group">
+												<button class="btn">Honorario</button>
+												<button class="btn dropdown-toggle" data-toggle="dropdown">
+													<span class="caret"></span>
+												</button>
+												<ul class="dropdown-menu">
+													<li><a  href="#">Lançar Honorario</a></li>
+													<li><a href="#" >Consultar Honorario</a></li>
+												</ul>
+											</div> 
+							
+											
+											<!-- <a class="btn" id="btnLista" href="lancaDespesa?idProcesso=${processo.numeroProcesso}">Lançar Depesas</a>
+										<a class="btn" id="btnCons" href="listaDespesa?idProcesso=${processo.numeroProcesso}" >Consultar Depesas</a>
+									
+									 --></td>
+									</tr>
+								</c:forEach>
+							
+							
+						</table>
+						</div>
 					</div>
-					
+				</c:if>
 					
 				</div>
 		
 		</div>
 		
-		<div id="rodape"></div>
+	
 		
 		
 		

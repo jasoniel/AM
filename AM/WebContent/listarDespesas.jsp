@@ -33,18 +33,47 @@
 				
 					<div id="conteudo_top">
 					
-						<table class="table">
-						
-							<tr>
-								<th>Número</th>
+					
+						<div id="topo_lista">
+							
+							<table class="table">
+								<tr>
+								<th style="width: 10px">Número</th>
+								<th>Descrição</th>
 								<th>Despesa</th>
 								<th>Data</th>
 								<th>Valor</th>
 								<th>Ação</th>
 							</tr>
-							
-						</table>
+							</table>
 						
+						</div>
+					
+						<div id="conteudo_lista">
+						
+							<table class="table table-hover">					
+								<c:forEach items="${listaDespesas}" var="despesa">
+									<tr>
+										<td style="width: 48px" >${despesa.processo.numeroProcesso }</td>
+										<td>${despesa.processo.descricaoProcesso}</td>
+										<td>${despesa.tipoDespesa.descricao}</td>
+										<td>${despesa.dataDespesa }</td>
+										<td>${despesa.valorDespesa }</td>
+										<td>
+										<a href="deletaDespesa?idLancaDespesa=${despesa.id}"><i class="icon-remove"></i></a>
+											&nbsp;&nbsp;
+										<a href="redirectDespesa?idLancaDespesa=${despesa.id}"><i class="icon-pencil"></i></a>
+										
+										
+										
+										
+										</td>
+									</tr>
+									
+								</c:forEach>
+								
+							</table>
+						</div>
 					</div>
 					
 					<div id="conteudo_bottom">

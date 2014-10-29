@@ -1,4 +1,4 @@
-package br.com.fiap.tdst.am.advocacia.controle;
+package br.com.fiap.tdst.am.advocacia.beans;
 
 public class Usuario {
 	

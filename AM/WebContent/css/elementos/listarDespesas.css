@@ -1,16 +1,18 @@
 #conteudo_top{
 	
 	width: 596px;
-	height: 200px;
+	height: 1272px;
 	float: right;
 	margin-top: 76px;
-	
+	overflow: scrol;
 }
 
-#conteudo_bottom{
+#conteudo_lista{
+	overflow: scroll;
+	max-height: 500px
 	
-	width: 596px;
-	height: 200px;
-	float: right;
-	margin-top:48px;	
+}
+#topo_lista{
+	
+	margin-bottom: -20px;
 }

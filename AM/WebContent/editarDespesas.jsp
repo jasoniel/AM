@@ -33,35 +33,33 @@
 				
 					<div id="idDivFormEditarDespesa">
 						
-						<form action="editaDespesa" name="formEditarDespesa"id="idFormEditarDespesa"> 
+						<form action="editaDespesa?idLancaEditaDespesa=${editaLancaDespesa.id}" name="formEditarDespesa"
+						 id="idFormEditarDespesa" method="post"> 
 					
 							<div id="idDivNrProEdDesp"> Número do processo:<input type="text" 
-							name="nrProEdDesp" id="idNrProEdDesp"><br/></div>
+							name="nrProEdDesp" id="idNrProEdDesp" readonly value="${editaLancaDespesa.processo.numeroProcesso}"><br/></div>
 						
 							<div id="idDivNmClienteEdDesp">Nome do cliente: 
-							<input  type="text" name="nmClienteEdDesp" id="idNmClienteEdDesp"><br/></div>
+							<input  type="text" name="nmClienteEdDesp" id="idNmClienteEdDesp" readonly
+							value="${editaLancaDespesa.processo.cliente.razaoSocial}"><br/></div>
 						
 							<div id="idDivEdDespDivDtDesp">Data da despesa: 
-							<input type="date" name="dtDespEdDesp" id="idEdDespDtDesp" ><br/></div>
+							<input type="date" name="dtDespEdDesp" id="idEdDespDtDesp" 
+							value="${editaLancaDespesa.dataDespesa}"><br/></div>
 						
 							<div id="idDivVrDespEdDesp">Valor da despesa:
-							<input type="text" name="valorDespEdDesp" id="idValorDespEdDesp"><br/></div> 
+							<input type="text" name="valorDespEdDesp" id="idValorDespEdDesp"
+							value="${editaLancaDespesa.valorDespesa}"><br/></div> 
 						
 							<div id="idDivTpDespEdDesp"> Despesas:
-							<select name="tpDespEdDesp" id="idTpDespEdDesp">
 							
-								<option value=""></option>
-								<option value="Xérox">Xérox</option>
-								<option value="Autenticações">Autenticações</option>
-								<option value="Viagens">Viagens</option>
-								<option value="Hospedagens">Hospedagens</option>
-								<option value="Outros">Outros</option>
-						
-						
-							</select> </div>
+							<input type="text" name="tpDespEdDesp" id="idTpDespEdDesp" readonly
+							value="${editaLancaDespesa.tipoDespesa.descricao}">
+							</div>
 							
 							<div id="idDivObsEdDesp">
-								Observações: <textarea name="obsEdDesp" id="idObsEdDesp" rows="" cols=""></textarea>
+								Observações: <textarea name="obsEdDesp" id="idObsEdDesp"
+								 rows="" cols="">${editaLancaDespesa.descricao}</textarea>
 							</div>
 						
 							<button type="submit" class="btn btn-inverse" id="idBtnEnviarEdDesp">Editar</button>

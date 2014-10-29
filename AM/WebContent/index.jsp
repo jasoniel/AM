@@ -22,19 +22,22 @@
 		
 			<div id="conteudo_meio">
 			
-				<form name="form_login" action="autentica" method="post" id="idFormLogin">
-				
-					<fieldset><legend>Indentifique-se</legend>
-						
-					login: <input type="text" name="login" id="idLogin" required /><br/>
-					senha: <input type="password" name="password" id="idPassword" required/><br/>
-					<button type="submit" class="btn btn-success" id="idEnviar">Entrar</button>
-					<button type="reset" class="btn btn-danger">Limpar</button>
-					
-					</fieldset>
-					
-				</form>
 			
+				<div id="idDivFormLogin">
+					<form name="form_login" action="autentica" method="post" id="idFormLogin">
+				
+						<fieldset><legend>Indentifique-se</legend>
+							
+						login: <input type="text" name="login" id="idLogin" required /><br/>
+						senha: <input type="password" name="password" id="idPassword" required/><br/>
+						<button type="submit" class="btn btn-success" id="idEnviar">Entrar</button>
+						<button type="reset" class="btn btn-danger">Limpar</button>
+						
+						</fieldset>
+						
+					</form>
+				
+				</div>
 			
 			
 			

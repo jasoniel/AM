@@ -33,37 +33,39 @@
 					
 					<div id="idDivFormLancDespesas">
 						
-								<form method="get" action="" id ="idFormLancDespesas">
+								<form method="post" action="cadastraDespesa" id ="idFormLancDespesas">
 								<fieldset><legend>Lançar Despesas</legend>
 									<div id ="idDivNrProcesso">
 										Número do processo:
-										<input id="idNrProcesso" name="nrProcessoDespesa" type="text" disabled="disabled"readonly>
+										<input id="idNrProcesso" type="text" name="nrProcessoDespesa"  
+										 value="${processoDespesas.numeroProcesso}" readonly>
 									</div>
 									<div id ="idDivNomeClienteDespesa">
 										Nome do Cliente:
-										<input id="idNomeCliente" type="text" name="nomeClienteDespesa" disabled="disabled" readonly>
+										<input id="idNomeCliente" type="text" name="nomeClienteDespesa"  value="${processoDespesas.cliente.razaoSocial }" readonly>
 									</div>
-									<div id ="idDivDataDespesa">
+									<div id ="idDivDataDespesa" >
 										Data da despesa:
-										<input id="idDataDespesa" type="text" name="dataDespesa" maxlength="10" placeholder="__/__/____" >
+										<input id="idDataDespesa" type="date" name="dataDespesa" required>
 									</div>
 									<div id="idDivValorDespesa">
 										Valor da despesa: 
-										<input id="idValorDespesa" type="text" maxlength="9" name="valorDespesa">
+										<input id="idValorDespesa" type="text" name="valorDespesa" required>
 									</div>
 									<div id ="idDivSelectDespesa">									
-										Despesas:<select name="selectDespesa" id="idSelectDespesa">
-       											<option value="">Selecione</option>
-       											<option value="xerox">Xérox</option>
-       											<option value="autenticao">Autenticações</option>
-       											<option value="viagens">Viagens</option>
-       											<option value="hospedagem">Hospedagens</option>
-       											<option value="outros">Outros</option>
+										Despesas:<select name="selectTipoDespesa" id="idSelectDespesa" required>
+       											<option value="" >Selecione</option>
+       											<option value="1">Xérox</option>
+       											<option value="2">Declaração</option> 
+       											<option value="3">Autenticações</option> 
+       											<option value="4">Passagem Aerea</option>
+       											<option value="5">Hospedagens</option>       											
+       											<option value="6">Outros</option>
 										</select>
 									</div>
-									<div id ="idDivObs">
+									<div id ="idDivObs" >
 										Observações:
-										<textarea id="idObs" ></textarea>
+										<textarea id="idObs" name="obs"></textarea>
 									</div>
 									<div id ="idDivBtns">
 									<button type="submit" class="btn btn-inverse" id="idBtnCadastrar">Cadastrar</button>

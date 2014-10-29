@@ -10,19 +10,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import br.com.fiap.tdst.am.advocacia.dao.UsuarioDAO;
+import br.com.fiap.tdst.am.advocacia.beans.Usuario;
+import br.com.fiap.tdst.am.advocacia.dao.OracleUsuarioDAO;
 
 /**
  * Servlet implementation class ControleProcessos
  */
 @WebServlet({"/autentica","/logout"})
-public class ControleProcessos extends HttpServlet {
+public class AutenticacaoControle extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ControleProcessos() {
+    public AutenticacaoControle() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -45,7 +46,7 @@ public class ControleProcessos extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		Usuario usuario = new Usuario();
-		UsuarioDAO dao = new UsuarioDAO();
+		OracleUsuarioDAO dao = new OracleUsuarioDAO();
 		
 		
 		HttpSession session =request.getSession();

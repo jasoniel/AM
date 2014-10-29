@@ -1,43 +1,43 @@
 package br.com.fiap.tdst.am.advocacia.controle;
 
+import java.sql.Date;
+import java.sql.SQLException;
+
+import br.com.fiap.tdst.am.advocacia.beans.Processo;
+import br.com.fiap.tdst.am.advocacia.dao.OracleLancaDespesasDAO;
+import br.com.fiap.tdst.am.advocacia.dao.OracleProcessoDAO;
+import br.com.fiap.tdst.am.advocacia.utils.FormatDate;
+
 class Teste{
 	
 
-	public static void main(String [] args){
-
-			
-
-			int [] vetor ={6,9,8,1,2,11,3};
-			int temp=0;
-
-
-			//selection
-
-			for(int i = 0 ; i< vetor.length;i++){
-
-
-				for(int j = i+1 ; j<(vetor.length-1);i++){
-					
-
-					if(vetor[i]>vetor[j+1]){
-						temp=vetor[j+1];
-						vetor[j+1]=vetor[j];
-						vetor[j]=temp;
-
-					}
-
-				}	
-
-			}
-			
-			for(int i = 0; i<vetor.length; i++){
-
-
-				System.out.print(vetor[i]+",");
-	
-			}
+	public static void main(String [] args) throws SQLException, ClassNotFoundException {
 		
-
+		
+	
+		
+		
+		OracleProcessoDAO dao = new OracleProcessoDAO();
+		
+		Processo processo = dao.getProcessoId(7);
+		OracleLancaDespesasDAO lancaDespesaDAO = new OracleLancaDespesasDAO();
+		
+		
+		
+		Date data =FormatDate.getData("2014-10-10");
+		
+		System.out.println(data instanceof java.sql.Date);
+		
+		
+		System.out.println(lancaDespesaDAO.getDespesa(268).getProcesso().getCliente().getEmail());
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 }

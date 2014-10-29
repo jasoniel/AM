@@ -5,15 +5,15 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import br.com.fiap.tdst.am.advocacia.beans.Usuario;
 import br.com.fiap.tdst.am.advocacia.connection.ConnectionManager;
-import br.com.fiap.tdst.am.advocacia.controle.Usuario;
 
-public class UsuarioDAO {
+public class OracleUsuarioDAO {
 
 	
 	private Connection conn = null;
 	
-	public UsuarioDAO(){
+	public OracleUsuarioDAO(){
 		try {
 			this.conn =new ConnectionManager().getInstance().getConnection();
 		} catch (ClassNotFoundException e) {

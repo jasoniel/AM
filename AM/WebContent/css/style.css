@@ -2,36 +2,33 @@
 #todo{
 	font-family: "Open Sans",sans-serif;
 	margin:0px auto;
-	width: 800px;
-	height: 600px;
-	border:3px solid black;
+	width: 1000px;
 	background-color: #232323;
 	color:#8D8D8D 
 }
 
 #menu{
 	margin-top: 25px;
-	
-	
 }
 #topo{
-	width: 800px;
+	width: 1000px;
 	height: 48px;
 	/*background-color: #232323;*/
+
 	
 }
 #logo{
 
-	width:200px;
+	width:350px;
 	height:48px;
-
 	float:left;
 }
 
 #meio{
 
-	width: 800px;
-	height: 552px;
+	width: 999px;
+	height:741px;
+
 	
 }
 
@@ -44,29 +41,30 @@
 }*/
 #conteudo_meio{
 	
-	width: 400px;
-	height: 450px;
+	width: 336px;
+	height: 100%;
 	margin:0px auto;
 	
+	
+
 }
 
 #conteudo_esquerdo{
 	
-	
 	width: 200px;
-	height: 552px;
+	height: 100%;
 	float: left;
 	background-color: #232323;
 }
 #conteudo_direito{
-	     
+   
 	width:595px;
-	height:552px;
+	height:100%;
 	float:right;
 }
 
 ul li{
-	border: 1px;
+
 	line-height: 30px;
 }
 /*
@@ -91,16 +89,17 @@ h3{
 	width:598px;
 	height: 48px;
 	float: right;
+
 }
 #menu_conteudo_topo_direito{
 	margin:16px 0px 0px 422px;
 	width: 152px;
-	
+
 }
 #data_topo_direito{
 	
-	width: 300px;
+	width: 360px;
 	height: 46px;
 	float: left;
-	margin-left: 117px;
+
 }
