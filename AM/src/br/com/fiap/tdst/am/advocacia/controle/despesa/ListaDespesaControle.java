@@ -11,9 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.fiap.tdst.am.advocacia.beans.LancaDespesa;
+import br.com.fiap.tdst.am.advocacia.bo.LancaDespesaBO;
 import br.com.fiap.tdst.am.advocacia.dao.OracleDAOFactory;
-import br.com.fiap.tdst.am.advocacia.dao.impl.OracleLancaDespesasDAO;
 import br.com.fiap.tdst.am.advocacia.dao.impl.OracleProcessoDAO;
+import br.com.fiap.tdst.am.advocacia.exceptions.ProcessoInvalidoException;
+import br.com.fiap.tdst.am.advocacia.exceptions.ProcessoNaoExistenteException;
 
 @WebServlet("/listaDespesa")
 public class ListaDespesaControle extends HttpServlet {
@@ -25,21 +27,22 @@ public class ListaDespesaControle extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
-		OracleLancaDespesasDAO lancaDespesaDAO= null;
+
 		OracleProcessoDAO processoDAO = null;
+		LancaDespesaBO lancaDespesaBO=null;
 		try {
-			lancaDespesaDAO =OracleDAOFactory.getOracleLancaDespesasDAO();
+			lancaDespesaBO = new LancaDespesaBO();
 			processoDAO= OracleDAOFactory.getOracleProcessoDAO();
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
+			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
 		List<LancaDespesa>listaDespesas=null;
 		try {
-			listaDespesas=lancaDespesaDAO.getListaLancaDespesa(processoDAO.getProcessoId(Long.parseLong(request.getParameter("idProcesso"))));
-		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
+			listaDespesas=lancaDespesaBO.getListaLancaDespesa(processoDAO.getProcessoId(Long.parseLong(request.getParameter("idProcesso"))));
+		} catch (ClassNotFoundException | SQLException | NumberFormatException 
+				| ProcessoInvalidoException | ProcessoNaoExistenteException e) {
+			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
 		System.out.println(listaDespesas.size());

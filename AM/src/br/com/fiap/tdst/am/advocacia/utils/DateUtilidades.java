@@ -4,7 +4,7 @@ import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-public abstract class FormatDate {
+public abstract class DateUtilidades {
 
 	
 	public static Date getData(String dataString){
@@ -25,4 +25,20 @@ public abstract class FormatDate {
 		
 		
 	}
+	
+	public static boolean isMaior(java.sql.Date dataInformada){
+		
+		java.sql.Date dataAtual = new java.sql.Date(System.currentTimeMillis());
+		
+		int comparacao = dataAtual.compareTo(dataInformada);
+		
+		if(comparacao==1){
+			return false;
+		}else
+		
+		return true;
+	}
+	
+	
+	
 }

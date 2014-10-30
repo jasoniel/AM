@@ -8,11 +8,14 @@ import br.com.fiap.tdst.am.advocacia.beans.Processo;
 import br.com.fiap.tdst.am.advocacia.dao.OracleDAOFactory;
 import br.com.fiap.tdst.am.advocacia.dao.impl.OracleLancaDespesasDAO;
 import br.com.fiap.tdst.am.advocacia.exceptions.DataInvalidaException;
+import br.com.fiap.tdst.am.advocacia.exceptions.DataMaiorException;
 import br.com.fiap.tdst.am.advocacia.exceptions.DespesaInvalidaException;
+import br.com.fiap.tdst.am.advocacia.exceptions.IdInvalidoException;
 import br.com.fiap.tdst.am.advocacia.exceptions.ProcessoInvalidoException;
 import br.com.fiap.tdst.am.advocacia.exceptions.ProcessoNaoExistenteException;
 import br.com.fiap.tdst.am.advocacia.exceptions.TipoDespesaInvalidaException;
 import br.com.fiap.tdst.am.advocacia.exceptions.ValorInvalidoException;
+import br.com.fiap.tdst.am.advocacia.utils.DateUtilidades;
 
 
 
@@ -22,7 +25,7 @@ public class LancaDespesaBO  {
 	
 	public LancaDespesaBO() throws ClassNotFoundException{
 		
-		this.dao= new OracleLancaDespesasDAO();
+		this.dao= OracleDAOFactory.getOracleLancaDespesasDAO();
 	}
 
 	
@@ -41,7 +44,8 @@ public class LancaDespesaBO  {
 	////RN22 ,RN17,RN20
 	public void incluirDespesa(LancaDespesa lancaDespesa) 
 				throws SQLException, DespesaInvalidaException, ProcessoInvalidoException, 
-					DataInvalidaException, ValorInvalidoException, ProcessoNaoExistenteException, ClassNotFoundException, TipoDespesaInvalidaException {
+					DataInvalidaException, ValorInvalidoException, ProcessoNaoExistenteException,
+					ClassNotFoundException, TipoDespesaInvalidaException, DataMaiorException {
 		
 		
 		if(!(lancaDespesa==null)){
@@ -58,7 +62,12 @@ public class LancaDespesaBO  {
 				throw new ProcessoNaoExistenteException();
 			}else if(lancaDespesa.getDataDespesa()==null){
 				throw new DataInvalidaException();
-			}else if(lancaDespesa.getValorDespesa()<=0){
+			}else if(DateUtilidades.isMaior(lancaDespesa.getDataDespesa())==true){
+				throw new DataMaiorException();
+			}
+			
+			
+			else if(lancaDespesa.getValorDespesa()<=0){
 				throw new ValorInvalidoException();
 			}else {
 				dao.incluirDespesa(lancaDespesa);
@@ -76,27 +85,32 @@ public class LancaDespesaBO  {
 			throw new ProcessoInvalidoException();
 		}else if((OracleDAOFactory.getOracleProcessoDAO().verificaProcesso(processo.getNumeroProcesso()))==false){
 			throw new ProcessoNaoExistenteException();
-		}else if(processo.getAdvogado()==null){
+		}else
+	
+		return dao.getListaLancaDespesa(processo);
+	}
+	
+	
+	public LancaDespesa getDespesa (long id) throws SQLException, ClassNotFoundException, IdInvalidoException{
+		
+		
+		if (id<=0){
+			throw new IdInvalidoException();
 			
-		}
-	
-		return null;
+		}else
+		
+		return dao.getDespesa(id);
 	}
 	
 	
-	public LancaDespesa getDespesa (long id) throws SQLException, ClassNotFoundException{
-		
-		
-		
-		
-		return null;
-	}
+	public void excluirDespesa(LancaDespesa lancaDespesa) throws SQLException, IdInvalidoException{
+				
+		if (lancaDespesa.getId() <= 0) {
+			throw new IdInvalidoException();
+		} else
+
+			dao.excluirDespesa(lancaDespesa);
 	
-	
-	public void excluirDespesa(LancaDespesa lancaDespesa) throws SQLException{
-		
-		
-		
 	}
 	
 	public void updateDespesa(LancaDespesa lancaDespesa) throws SQLException{

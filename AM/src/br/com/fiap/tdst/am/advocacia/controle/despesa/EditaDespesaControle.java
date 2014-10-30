@@ -10,9 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.fiap.tdst.am.advocacia.beans.LancaDespesa;
+import br.com.fiap.tdst.am.advocacia.bo.LancaDespesaBO;
 import br.com.fiap.tdst.am.advocacia.dao.OracleDAOFactory;
 import br.com.fiap.tdst.am.advocacia.dao.impl.OracleLancaDespesasDAO;
-import br.com.fiap.tdst.am.advocacia.utils.FormatDate;
+import br.com.fiap.tdst.am.advocacia.exceptions.IdInvalidoException;
+import br.com.fiap.tdst.am.advocacia.utils.DateUtilidades;
 
 @WebServlet({"/editaDespesa","/redirectDespesa"})
 public class EditaDespesaControle extends HttpServlet {
@@ -27,9 +29,9 @@ public class EditaDespesaControle extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		OracleLancaDespesasDAO lancaDespesaDAO =null;
+		LancaDespesaBO lancaDespesaBO =null;
 		try {
-			lancaDespesaDAO= OracleDAOFactory.getOracleLancaDespesasDAO();
+			lancaDespesaBO= new LancaDespesaBO();
 		} catch (ClassNotFoundException e) {
 			
 			e.printStackTrace();
@@ -37,9 +39,9 @@ public class EditaDespesaControle extends HttpServlet {
 		
 		LancaDespesa lancaDespesa=null;
 		try {
-			lancaDespesa = lancaDespesaDAO.getDespesa(Long.parseLong(request.getParameter("idLancaDespesa")));
-		} catch (NumberFormatException | ClassNotFoundException | SQLException e) {
-			
+			lancaDespesa = lancaDespesaBO.getDespesa(Long.parseLong(request.getParameter("idLancaDespesa")));
+		} catch (NumberFormatException | ClassNotFoundException | SQLException | IdInvalidoException e) {
+			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
 		
@@ -63,7 +65,7 @@ public class EditaDespesaControle extends HttpServlet {
 		
 		LancaDespesa lancaDespesa = new LancaDespesa();
 		lancaDespesa.setId(((LancaDespesa)request.getSession().getAttribute("editaLancaDespesa")).getId());
-		lancaDespesa.setDataDespesa(FormatDate.getData(request.getParameter("dtDespEdDesp")));
+		lancaDespesa.setDataDespesa(DateUtilidades.getData(request.getParameter("dtDespEdDesp")));
 		lancaDespesa.setDescricao(request.getParameter("obsEdDesp"));
 		lancaDespesa.setValorDespesa(Double.parseDouble(request.getParameter("valorDespEdDesp")));
 		try {

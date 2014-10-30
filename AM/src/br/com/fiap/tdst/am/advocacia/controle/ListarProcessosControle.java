@@ -16,7 +16,7 @@ import br.com.fiap.tdst.am.advocacia.beans.Processo;
 import br.com.fiap.tdst.am.advocacia.dao.OracleDAOFactory;
 import br.com.fiap.tdst.am.advocacia.dao.impl.OracleClienteDAO;
 import br.com.fiap.tdst.am.advocacia.dao.impl.OracleProcessoDAO;
-import br.com.fiap.tdst.am.advocacia.utils.FormatDate;
+import br.com.fiap.tdst.am.advocacia.utils.DateUtilidades;
 
 @WebServlet("/listaProcessos")
 public class ListarProcessosControle extends HttpServlet{
@@ -87,8 +87,8 @@ public class ListarProcessosControle extends HttpServlet{
 		if((request.getParameter("nomeCliente")==null || request.getParameter("nomeCliente").isEmpty()) &&
 				(request.getParameter("nrProcesso")==null || request.getParameter("nrProcesso").isEmpty())	){
 			
-				java.sql.Date dataInicial = FormatDate.getData(request.getParameter("dtIncialPeriodo"));
-				java.sql.Date dataFinal = FormatDate.getData(request.getParameter("dtFinalPeriodo"));
+				java.sql.Date dataInicial = DateUtilidades.getData(request.getParameter("dtIncialPeriodo"));
+				java.sql.Date dataFinal = DateUtilidades.getData(request.getParameter("dtFinalPeriodo"));
 		
 					try {
 							lista = processoDAO.getList(dataInicial, dataFinal);

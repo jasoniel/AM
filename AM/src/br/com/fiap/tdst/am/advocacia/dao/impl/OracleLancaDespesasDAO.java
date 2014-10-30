@@ -45,6 +45,7 @@ public  class  OracleLancaDespesasDAO implements LancaDespesaDAOInterface {
 		PreparedStatement stmt = conn.prepareStatement(select);
 		stmt.setInt(1, processo.getNumeroProcesso());
 		ResultSet rs = stmt.executeQuery();
+	
 		
 		List<LancaDespesa> lista = new ArrayList<>();
 		

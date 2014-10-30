@@ -18,12 +18,13 @@ import br.com.fiap.tdst.am.advocacia.dao.OracleDAOFactory;
 import br.com.fiap.tdst.am.advocacia.dao.impl.OracleProcessoDAO;
 import br.com.fiap.tdst.am.advocacia.dao.impl.OracleTipoDespesaDAO;
 import br.com.fiap.tdst.am.advocacia.exceptions.DataInvalidaException;
+import br.com.fiap.tdst.am.advocacia.exceptions.DataMaiorException;
 import br.com.fiap.tdst.am.advocacia.exceptions.DespesaInvalidaException;
 import br.com.fiap.tdst.am.advocacia.exceptions.ProcessoInvalidoException;
 import br.com.fiap.tdst.am.advocacia.exceptions.ProcessoNaoExistenteException;
 import br.com.fiap.tdst.am.advocacia.exceptions.TipoDespesaInvalidaException;
 import br.com.fiap.tdst.am.advocacia.exceptions.ValorInvalidoException;
-import br.com.fiap.tdst.am.advocacia.utils.FormatDate;
+import br.com.fiap.tdst.am.advocacia.utils.DateUtilidades;
 
 @WebServlet({"/lancaDespesa","/cadastraDespesa"})
 public class CadastraDespesaControle extends HttpServlet{
@@ -67,7 +68,7 @@ public class CadastraDespesaControle extends HttpServlet{
 			e1.printStackTrace();
 		}
 	
-		lancaDespesa.setDataDespesa(FormatDate.getData(request.getParameter("dataDespesa")));
+		lancaDespesa.setDataDespesa(DateUtilidades.getData(request.getParameter("dataDespesa")));
 		
 		if(request.getParameter("valorDespesa").isEmpty() || request.getParameter("valorDespesa")==null){
 			lancaDespesa.setValorDespesa(0);
@@ -85,7 +86,7 @@ public class CadastraDespesaControle extends HttpServlet{
 			} catch (SQLException | DespesaInvalidaException
 					| ProcessoInvalidoException | DataInvalidaException
 					| ValorInvalidoException | ClassNotFoundException |
-					ProcessoNaoExistenteException | TipoDespesaInvalidaException e) {
+					ProcessoNaoExistenteException | TipoDespesaInvalidaException | DataMaiorException e) {
 				
 				
 				System.err.println(e.getMessage());

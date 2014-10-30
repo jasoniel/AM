@@ -29,7 +29,7 @@ ul li{
 }
 #tabela{
 	margin-top: 40px;
-	overflow: scroll;
+	overflow-y : auto;
 	height: 350px
 }
 

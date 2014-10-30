@@ -10,8 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.fiap.tdst.am.advocacia.beans.LancaDespesa;
+import br.com.fiap.tdst.am.advocacia.bo.LancaDespesaBO;
 import br.com.fiap.tdst.am.advocacia.dao.OracleDAOFactory;
 import br.com.fiap.tdst.am.advocacia.dao.impl.OracleLancaDespesasDAO;
+import br.com.fiap.tdst.am.advocacia.exceptions.IdInvalidoException;
 
 @WebServlet("/deletaDespesa")
 public class DeletaDespesaControle extends HttpServlet{
@@ -25,24 +27,26 @@ public class DeletaDespesaControle extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		OracleLancaDespesasDAO lancaDespesaDAO = null;
+		
+		LancaDespesaBO lancaDespesaBO = null;
 		try {
-			lancaDespesaDAO = OracleDAOFactory.getOracleLancaDespesasDAO();
+			lancaDespesaBO = new LancaDespesaBO();
+			
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		LancaDespesa lancaDespesa=null;
 		try {
-			lancaDespesa=lancaDespesaDAO.getDespesa(Long.parseLong(request.getParameter("idLancaDespesa")));
-		} catch (NumberFormatException | ClassNotFoundException | SQLException e) {
+			lancaDespesa= lancaDespesaBO.getDespesa(Long.parseLong(request.getParameter("idLancaDespesa")));
+		} catch (NumberFormatException | ClassNotFoundException | SQLException | IdInvalidoException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 		try {
-			lancaDespesaDAO.excluirDespesa(lancaDespesa);
-		} catch (SQLException e) {
+			lancaDespesaBO.excluirDespesa(lancaDespesa);
+		} catch (SQLException | IdInvalidoException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

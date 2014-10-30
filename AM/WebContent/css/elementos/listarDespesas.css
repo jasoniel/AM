@@ -8,7 +8,7 @@
 }
 
 #conteudo_lista{
-	overflow: scroll;
+	overflow: auto;
 	max-height: 500px
 	
 }
