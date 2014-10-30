@@ -1,4 +1,4 @@
-package br.com.fiap.tdst.am.advocacia.interfaces;
+package br.com.fiap.tdst.am.advocacia.dao.interfaces;
 
 import java.sql.SQLException;
 import java.util.List;

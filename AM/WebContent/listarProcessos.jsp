@@ -1,4 +1,4 @@
-<%@page import="br.com.fiap.tdst.am.advocacia.beans.Processo"%>
+ <%@page import="br.com.fiap.tdst.am.advocacia.beans.Processo"%>
 <%@page import="br.com.fiap.tdst.am.advocacia.beans.Cliente"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
