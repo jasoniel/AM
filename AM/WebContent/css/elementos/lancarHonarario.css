@@ -1,3 +1,23 @@
 #idDivFormLancDespesas{
 	border:solid red;
+	width: 550px;
+	margin-top: 39px;
+}
+
+#idNrProcesso{
+	
+	margin-left: 15px;
+}
+#idNomeCliente{
+	margin-left: 43px;
+}
+#idDataHonorario{
+	margin-left: 33px;
+}
+#idQtdHora{
+	margin-left: 10px;
+	width: 23px;
+}
+#idSelectTipoTarefa{
+	margin-left: 114px;
 }

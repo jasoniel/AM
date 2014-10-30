@@ -57,7 +57,7 @@
 											
 												<div id ="idDivSelectHonorario">			
 																		
-												Tarefa:<select name="selectHonorario" id="idHonorario" required>
+												Tarefa:<select name="selectHonorario" id="idSelectTipoTarefa" required>
 														<option value="" >selecione</option>
 														
 																<c:forEach items="${listaTipoTarefa}" var="tarefa">
