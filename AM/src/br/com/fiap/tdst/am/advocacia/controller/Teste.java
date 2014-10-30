@@ -36,10 +36,7 @@ public class Teste{
 		//dao.incluir(lancaHonorario);
 		
 		 
-		 LancaHonorario honorario = (LancaHonorario) new OracleLancaHonorarioDAO().getObjeto(10);
-		 
-		 
-		 System.out.println(honorario.getObservacao());
+		System.out.println(dao.getObjeto(new OracleProcessoDAO().getProcessoId(7)).getDataHonorario());;
 		
 		
 		

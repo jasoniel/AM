@@ -4,8 +4,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import br.com.fiap.tdst.am.advocacia.beans.LancaHonorario;
+import br.com.fiap.tdst.am.advocacia.beans.Processo;
 import br.com.fiap.tdst.am.advocacia.beans.TipoTarefa;
 import br.com.fiap.tdst.am.advocacia.connection.ConnectionManager;
 import br.com.fiap.tdst.am.advocacia.dao.interfaces.OracleDAOInterface;
@@ -21,7 +24,49 @@ public class OracleLancaHonorarioDAO implements OracleDAOInterface {
 		this.conn=ConnectionManager.getInstance().getConnection();
 	}
 			
+	
+	public List<LancaHonorario> getList(Processo processo) throws SQLException, ClassNotFoundException{
+		
+		String select =" select CD_LANCAMENTO from  T_AM_LANCA_HONORARIO where NR_PROCESSO =?";
+		
+		PreparedStatement stmt = conn.prepareStatement(select);
+		
+		stmt.setInt(1, processo.getNumeroProcesso());
+		
+		ResultSet rs = stmt.executeQuery();
+		List<LancaHonorario> lista= new ArrayList<>();
+		
+		while(rs.next()){
 			
+			LancaHonorario honarario = (LancaHonorario)getObjeto(rs.getLong("CD_LANCAMENTO"));
+			lista.add(honarario);
+		}
+	
+		
+		
+		return lista;
+		
+		
+	}
+	
+	public LancaHonorario getObjeto(Processo processo) throws SQLException, ClassNotFoundException{
+		
+		String select= "select CD_LANCAMENTO from T_AM_LANCA_HONORARIO where NR_PROCESSO=?";
+		PreparedStatement stmt = conn.prepareStatement(select);
+		stmt.setInt(1, processo.getNumeroProcesso());
+		ResultSet rs = stmt.executeQuery();
+		
+		
+		LancaHonorario lancaHonorario = new LancaHonorario();
+		while(rs.next()){
+			
+			lancaHonorario = (LancaHonorario) getObjeto(rs.getLong("CD_LANCAMENTO"));
+		}
+		return lancaHonorario;
+	}
+	
+	
+	
 	
 	@Override
 	public Object getObjeto(long id) throws SQLException, ClassNotFoundException {

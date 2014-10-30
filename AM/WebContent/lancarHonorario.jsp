@@ -40,11 +40,11 @@
 											<div id ="idDivNrProcesso">
 												Número do processo:
 												<input id="idNrProcesso" type="text" name="nrProcessoHonorario"  
-												 value="${processoDespesas.numeroProcesso}" readonly>
+												 value="${processoHonarario.numeroProcesso}" readonly>
 											</div>
 											<div id ="idDivNomeClienteHonorario">
 												Nome do Cliente:
-												<input id="idNomeCliente" type="text" name="nomeClienteHonarario"  value="${processoDespesas.cliente.razaoSocial }" readonly>
+												<input id="idNomeCliente" type="text" name="nomeClienteHonarario"  value="${processoHonarario.cliente.razaoSocial }" readonly>
 											</div>
 											<div id ="idDivDataHonorario" >
 												Data do Honorario:

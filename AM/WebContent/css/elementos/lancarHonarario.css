@@ -1,5 +1,5 @@
 #idDivFormLancDespesas{
-	border:solid red;
+	
 	width: 550px;
 	margin-top: 39px;
 }
@@ -14,10 +14,14 @@
 #idDataHonorario{
 	margin-left: 33px;
 }
-#idQtdHora{
-	margin-left: 10px;
-	width: 23px;
+#idQtdHoras{
+	margin-left: 9px;
+	width: 20px;
 }
 #idSelectTipoTarefa{
 	margin-left: 114px;
+}
+#idObs{
+	
+	margin-left: 71px;
 }
