@@ -4,15 +4,15 @@ import java.sql.SQLException;
 
 import br.com.fiap.tdst.am.advocacia.beans.LancaDespesa;
 
-public interface OracleLancaHonorarioDAOInterface {
+public interface OracleDAOInterface {
 	
-	Object getObjeto (long id);
+	Object getObjeto (long id) throws SQLException, ClassNotFoundException;
 	
 	void incluir(Object objeto) throws SQLException;
 
-	void excluir(Object objeto);
+	void excluir(Object objeto) throws SQLException;
 
-	void update(Object objeto);	
+	void update(Object objeto) throws SQLException;
 	
 	
 

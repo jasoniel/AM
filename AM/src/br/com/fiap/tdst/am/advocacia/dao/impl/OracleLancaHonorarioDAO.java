@@ -2,13 +2,15 @@ package br.com.fiap.tdst.am.advocacia.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import br.com.fiap.tdst.am.advocacia.beans.LancaHonorario;
+import br.com.fiap.tdst.am.advocacia.beans.TipoTarefa;
 import br.com.fiap.tdst.am.advocacia.connection.ConnectionManager;
-import br.com.fiap.tdst.am.advocacia.dao.interfaces.OracleLancaHonorarioDAOInterface;
+import br.com.fiap.tdst.am.advocacia.dao.interfaces.OracleDAOInterface;
 
-public class OracleLancaHonorarioDAO implements OracleLancaHonorarioDAOInterface {
+public class OracleLancaHonorarioDAO implements OracleDAOInterface {
 
 	
 	private Connection conn = null;
@@ -22,9 +24,26 @@ public class OracleLancaHonorarioDAO implements OracleLancaHonorarioDAOInterface
 			
 	
 	@Override
-	public Object getObjeto(long id) {
+	public Object getObjeto(long id) throws SQLException, ClassNotFoundException {
 		
-		return null;
+		String select =" select * from T_AM_LANCA_HONORARIO where CD_LANCAMENTO=?";
+		PreparedStatement stmt = conn.prepareStatement(select);
+		stmt.setLong(1, id);
+		ResultSet rs =stmt.executeQuery();
+		
+		LancaHonorario lancaHonorario = new LancaHonorario();
+		
+		while(rs.next()){
+			
+			lancaHonorario.setId(rs.getLong("CD_LANCAMENTO"));
+			lancaHonorario.setDataHonorario(rs.getDate("DT_HONORARIO"));
+			lancaHonorario.setProcesso(new OracleProcessoDAO().getProcessoId(rs.getLong("NR_PROCESSO")));
+			lancaHonorario.setQtdHora(rs.getDouble("QT_HORA"));
+			lancaHonorario.setObservacao(rs.getString("DS_OBSERVACAO"));
+			lancaHonorario.setTipoTarefa((TipoTarefa) new OracleTipoTarefaDAO().getObjeto(rs.getLong("CD_TIPO_TAREFA")));
+		}
+		
+		return lancaHonorario;
 	}
 
 	@Override
@@ -32,7 +51,7 @@ public class OracleLancaHonorarioDAO implements OracleLancaHonorarioDAOInterface
 		
 		LancaHonorario lancaHonorario = (LancaHonorario)objeto;
 		
-		String insert = " insert into T_AM_LANCA_HONORARIO " + " values(SQ_T_AM_LANCA_HONORARIO.NEXTVAL, ?,?,?,?,?)";
+		String insert = " insert into T_AM_LANCA_HONORARIO " + " values(SQ_AM_LANCA_HONORARIO.NEXTVAL, ?,?,?,?,?)";
 		PreparedStatement stmt = conn.prepareStatement(insert);
 		
 		stmt.setLong(1, lancaHonorario.getTipoTarefa().getId());
@@ -47,8 +66,17 @@ public class OracleLancaHonorarioDAO implements OracleLancaHonorarioDAOInterface
 	}
 
 	@Override
-	public void excluir(Object objeto) {
-		// TODO Auto-generated method stub
+	public void excluir(Object objeto) throws SQLException {
+		
+
+		String delete = "delete from T_AM_LANCA_HONORARIO where CD_LANCAMENTO = ?";
+		
+		PreparedStatement stmt = conn.prepareStatement(delete);
+		
+		stmt.setLong(1, ((LancaHonorario)objeto).getId());
+		
+		
+		
 		
 	}
 

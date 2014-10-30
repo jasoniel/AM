@@ -3,6 +3,7 @@ package br.com.fiap.tdst.am.advocacia.dao;
 import br.com.fiap.tdst.am.advocacia.dao.impl.OracleAdvogadoDAO;
 import br.com.fiap.tdst.am.advocacia.dao.impl.OracleClienteDAO;
 import br.com.fiap.tdst.am.advocacia.dao.impl.OracleLancaDespesasDAO;
+import br.com.fiap.tdst.am.advocacia.dao.impl.OracleLancaHonorarioDAO;
 import br.com.fiap.tdst.am.advocacia.dao.impl.OracleProcessoDAO;
 import br.com.fiap.tdst.am.advocacia.dao.impl.OracleTipoDespesaDAO;
 import br.com.fiap.tdst.am.advocacia.dao.impl.OracleUsuarioDAO;
@@ -40,6 +41,10 @@ public final class OracleDAOFactory {
 		return new OracleUsuarioDAO();
 	}
 	
+	public static OracleLancaHonorarioDAO getOracleLancaHonorarioDAO() throws ClassNotFoundException{
+		
+		return new OracleLancaHonorarioDAO();
+	}
 	
 	
 	
