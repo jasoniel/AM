@@ -46,10 +46,10 @@ public class ListaDespesaController extends HttpServlet {
 			e.printStackTrace();
 		}
 		System.out.println(listaDespesas.size());
-		request.getSession().setAttribute("listaDespesas", listaDespesas);
-		response.sendRedirect("listarDespesas.jsp");
+		request.setAttribute("listaDespesas", listaDespesas);
+		//response.sendRedirect("listarDespesas.jsp");
 		
-		
+		request.getRequestDispatcher("listarDespesas.jsp").forward(request, response);
 		
 		
 	}

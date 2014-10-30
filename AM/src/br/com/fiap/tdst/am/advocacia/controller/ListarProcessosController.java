@@ -80,13 +80,14 @@ public class ListarProcessosController extends HttpServlet{
 					}
 					 
 		 }	
-		 
-		 request.setAttribute("vProcesso", verificaProcesso);
-		 
+				 if(!request.getParameter("nrProcesso").isEmpty()){
+				 request.setAttribute("vProcesso", verificaProcesso);
+				 }
 		//Nome do Cliente
 		 
 		 if(verificaCliente==true){
 				if(request.getParameter("nrProcesso")==null || request.getParameter("nrProcesso").isEmpty()){
+					 
 						try {
 						
 							
@@ -101,11 +102,9 @@ public class ListarProcessosController extends HttpServlet{
 				
 				}
 		 }
-		 
-		 
-		 request.setAttribute("verificaCliente", verificaCliente);
-		 
-		 
+				 if(request.getParameter("nrProcesso")==null || request.getParameter("nrProcesso").isEmpty()){
+					 	request.setAttribute("verificaCliente", verificaCliente);
+				 }
 	
 		
 		

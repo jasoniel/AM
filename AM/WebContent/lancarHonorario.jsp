@@ -7,11 +7,7 @@
 <head>
 <title>Lancar Honarario</title>
 <style><%@include file="css/style.css" %></style>
-<style><%@include file="css/elementos/lancDespesas.css" %></style>
-<script><%@include file="js/lancaDespesa.js" %></script>
-
-<script src="js/lancaDespesa.js"></script>
-
+<style><%@include file="css/elementos/lancarHonarario.css" %></style>
 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 
 </head>

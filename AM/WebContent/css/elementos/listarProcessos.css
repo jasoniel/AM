@@ -75,27 +75,34 @@ table{
 }
 
 #idDivNrProcesso {
-	border: solid black;
+	/*border: solid black;*/
 	width: 541px;
 	height: 48px;
 }
 #idDivNomeCliente{
-	border:solid black;
+	/*border:solid black;*/
 	width: 540px;
-	height: 46px;
+	height: 53px;
 	margin-top: -15px;
 }
 #campoNomeCliente{
-	width: 338px;
-	border: solid;
+	width: 342px;
+	/*border: solid;*/
 	float: left;
 }
 #campoNrProcesso{
 	width: 338px;
-	border: solid;
+	/*border: solid;*/
 	float: left;
 }
 #msgNrProcesso{
+	width: 137px;
+	float: right;
+	height: 13px;
+}
+#msgNomeCliente{
 	width: 127px;
 	float: right;
+	margin-top: 0px;
+	height: 15px;
 }

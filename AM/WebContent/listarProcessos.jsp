@@ -72,8 +72,8 @@
 											
 										<div id="campoNomeCliente">Nome do Cliente: <input type="text" name="nomeCliente"   id="idNomeCliente"  ></div>
 										<!-- se cliente não existir e gerado uma div com msg de erro --> 
-										<c:if test="${vProcesso eq false}">								 		
-											<div class="alert alert-error" id="msgNrProcesso">											
+										<c:if test="${verificaCliente eq false}">								 		
+											<div class="alert alert-error" id="msgNomeCliente">											
 												<button type="button" class="close" data-dismiss="alert">×</button>
 	  											Cliente invalido!
 											</div>
