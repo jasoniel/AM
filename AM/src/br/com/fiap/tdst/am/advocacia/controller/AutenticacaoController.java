@@ -1,4 +1,4 @@
-package br.com.fiap.tdst.am.advocacia.controle;
+package br.com.fiap.tdst.am.advocacia.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -17,13 +17,13 @@ import br.com.fiap.tdst.am.advocacia.dao.impl.OracleUsuarioDAO;
  * Servlet implementation class ControleProcessos
  */
 @WebServlet({"/autentica","/logout"})
-public class AutenticacaoControle extends HttpServlet {
+public class AutenticacaoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AutenticacaoControle() {
+    public AutenticacaoController() {
         super();
         // TODO Auto-generated constructor stub
     }

@@ -30,7 +30,7 @@ public final class  OracleProcessoDAO {
 			return false;
 		}else if(processo !=null){
 			return true;
-		}
+		}else 
 		return false;
 	}
 	

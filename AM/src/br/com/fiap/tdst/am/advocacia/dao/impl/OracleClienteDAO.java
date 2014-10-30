@@ -20,18 +20,19 @@ public class OracleClienteDAO {
 	
 	
 	public  boolean ClienteExiste(String  nome) throws SQLException{
-		String select = "select * from T_AM_CLIENTE WHERE DS_RAZAO_SOCIAL=?";
+		
+		String select = "select CD_PESSOA from T_AM_CLIENTE WHERE DS_RAZAO_SOCIAL=?";
 
 		PreparedStatement stmt = conn.prepareStatement(select);
 		stmt.setString(1,nome);
 		ResultSet rs =stmt.executeQuery();
 		
-		String nomeTemp ="";
+		int codigo=0;
 		
 		while(rs.next()){
-			nomeTemp = rs.getString("DS_RAZAO_SOCIAL");
+			codigo = rs.getInt("CD_PESSOA");
 		}
-		if(nomeTemp.isEmpty() || nomeTemp == null){
+		if(codigo != 0 ) {
 			return true;
 		}else 
 			return false;

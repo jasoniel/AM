@@ -1,4 +1,4 @@
-package br.com.fiap.tdst.am.advocacia.controle.despesa;
+package br.com.fiap.tdst.am.advocacia.controller.despesa;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -17,7 +17,7 @@ import br.com.fiap.tdst.am.advocacia.exceptions.IdInvalidoException;
 import br.com.fiap.tdst.am.advocacia.utils.DateUtilidades;
 
 @WebServlet({"/editaDespesa","/redirectDespesa"})
-public class EditaDespesaControle extends HttpServlet {
+public class EditaDespesaController extends HttpServlet {
 	
 	
 	/**

@@ -1,4 +1,4 @@
-package br.com.fiap.tdst.am.advocacia.controle.despesa;
+package br.com.fiap.tdst.am.advocacia.controller.despesa;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -16,7 +16,7 @@ import br.com.fiap.tdst.am.advocacia.dao.impl.OracleLancaDespesasDAO;
 import br.com.fiap.tdst.am.advocacia.exceptions.IdInvalidoException;
 
 @WebServlet("/deletaDespesa")
-public class DeletaDespesaControle extends HttpServlet{
+public class DeletaDespesaController extends HttpServlet{
 	
 	/**
 	 * 

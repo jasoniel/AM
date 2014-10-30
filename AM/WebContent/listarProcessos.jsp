@@ -56,15 +56,30 @@
 				
 						<form name ="form_listar_processos" id="idFormListar" method="post" action="listaProcessos" >
 							<fieldset>
-								Número do Processo: <input type="number" name="nrProcesso"   id="idNrProcesso" />
-									<c:if test="${vProcesso eq false}">
-										<font color="red">Processo não
-											exite
-										</font>
-										
-									</c:if>
-									<br/>
-							Nome do Cliente: <input type="text" name="nomeCliente"   id="idNomeCliente"  ><br/>
+							
+									<div id="idDivNrProcesso">									
+										<div id="campoNrProcesso">Número do Processo:<input type="number" name="nrProcesso" id="idNrProcesso" /> </div>
+										<!-- se processo não existir e gerado uma div com msg de erro --> 								 		
+								 		<c:if test="${vProcesso eq false}">								 		
+											<div class="alert alert-error" id="msgNrProcesso">											
+												<button type="button" class="close" data-dismiss="alert">×</button>
+	  											Processo invalido!
+											</div>
+										</c:if>								 
+								  </div><br/>									
+						
+									<div id="idDivNomeCliente">
+											
+										<div id="campoNomeCliente">Nome do Cliente: <input type="text" name="nomeCliente"   id="idNomeCliente"  ></div>
+										<!-- se cliente não existir e gerado uma div com msg de erro --> 
+										<c:if test="${vProcesso eq false}">								 		
+											<div class="alert alert-error" id="msgNrProcesso">											
+												<button type="button" class="close" data-dismiss="alert">×</button>
+	  											Cliente invalido!
+											</div>
+										</c:if>	
+									</div><br/>
+							
 								Período: <input type="date" name="dtIncialPeriodo" id="idDtInicial" >
 								até <input type="date" name="dtFinalPeriodo" id="idDtFinal"><br/>
 								<button type="submit" class="btn btn-inverse" id="idBtnBuscar"><i class="icon-search"></i> Buscar</button>
@@ -127,10 +142,10 @@
 											</div> 
 							
 											
-											<!-- <a class="btn" id="btnLista" href="lancaDespesa?idProcesso=${processo.numeroProcesso}">Lançar Depesas</a>
-										<a class="btn" id="btnCons" href="listaDespesa?idProcesso=${processo.numeroProcesso}" >Consultar Depesas</a>
-									
-									 --></td>
+													<!-- <a class="btn" id="btnLista" href="lancaDespesa?idProcesso=${processo.numeroProcesso}">Lançar Depesas</a>
+												<a class="btn" id="btnCons" href="listaDespesa?idProcesso=${processo.numeroProcesso}" >Consultar Depesas</a>								
+													 -->
+									 </td>
 									</tr>
 								</c:forEach>
 							

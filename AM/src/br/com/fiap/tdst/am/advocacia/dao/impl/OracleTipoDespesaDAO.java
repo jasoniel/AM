@@ -23,7 +23,7 @@ public class OracleTipoDespesaDAO {
 	
 	public List<TipoDespesa> getListaTipoDespesa() throws SQLException{
 		
-		String select = "select CD_TIPO_DESPESA from T_AM_TIPO_DESPESA";
+		String select = "select CD_TIPO_DESPESA from T_AM_TIPO_DESPESA order by CD_TIPO_DESPESA";
 		
 		PreparedStatement stmt = conn.prepareStatement(select);
 		ResultSet rs =stmt.executeQuery();
@@ -46,7 +46,7 @@ public class OracleTipoDespesaDAO {
 	
 	public TipoDespesa getTipoDespesaId(long id) throws SQLException{
 		
-		String select ="select * from T_AM_TIPO_DESPESA where CD_TIPO_DESPESA = ?";
+		String select ="select * from T_AM_TIPO_DESPESA where CD_TIPO_DESPESA = ? ";
 		PreparedStatement stmt = conn.prepareStatement(select);
 		stmt.setLong(1, id);
 		

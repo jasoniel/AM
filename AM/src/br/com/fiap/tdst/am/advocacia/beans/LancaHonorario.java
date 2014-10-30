@@ -1,13 +1,13 @@
 package br.com.fiap.tdst.am.advocacia.beans;
 
-import java.util.Calendar;
+import java.sql.Date;
 
 public final  class LancaHonorario {
 	
 	private long id;
 	private TipoTarefa tipoTarefa;
 	private Processo processo;
-	private Calendar dataHonorario;
+	private Date dataHonorario;
 	private double qtdHora;
 	private String observacao;
 	  
@@ -37,11 +37,11 @@ public final  class LancaHonorario {
 		this.processo = processo;
 	}
 
-	public Calendar getDataHonorario() {
+	public Date getDataHonorario() {
 		return dataHonorario;
 	}
 
-	public void setDataHonorario(Calendar dataHonorario) {
+	public void setDataHonorario(Date dataHonorario) {
 		this.dataHonorario = dataHonorario;
 	}
 

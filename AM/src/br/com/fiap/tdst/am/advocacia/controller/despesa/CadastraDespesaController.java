@@ -1,4 +1,4 @@
-package br.com.fiap.tdst.am.advocacia.controle.despesa;
+package br.com.fiap.tdst.am.advocacia.controller.despesa;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -27,7 +27,7 @@ import br.com.fiap.tdst.am.advocacia.exceptions.ValorInvalidoException;
 import br.com.fiap.tdst.am.advocacia.utils.DateUtilidades;
 
 @WebServlet({"/lancaDespesa","/cadastraDespesa"})
-public class CadastraDespesaControle extends HttpServlet{
+public class CadastraDespesaController extends HttpServlet{
 
 	
 	/**

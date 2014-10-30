@@ -1,4 +1,4 @@
-package br.com.fiap.tdst.am.advocacia.controle.despesa;
+package br.com.fiap.tdst.am.advocacia.controller.despesa;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -18,7 +18,7 @@ import br.com.fiap.tdst.am.advocacia.exceptions.ProcessoInvalidoException;
 import br.com.fiap.tdst.am.advocacia.exceptions.ProcessoNaoExistenteException;
 
 @WebServlet("/listaDespesa")
-public class ListaDespesaControle extends HttpServlet {
+public class ListaDespesaController extends HttpServlet {
 
 
 	private static final long serialVersionUID = 1L;

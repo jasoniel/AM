@@ -73,7 +73,29 @@ table{
 	font-size: 9px;
 	text-align: right;
 }
-.dropdown-menu>li>a:hover{
-	
-	
+
+#idDivNrProcesso {
+	border: solid black;
+	width: 541px;
+	height: 48px;
+}
+#idDivNomeCliente{
+	border:solid black;
+	width: 540px;
+	height: 46px;
+	margin-top: -15px;
+}
+#campoNomeCliente{
+	width: 338px;
+	border: solid;
+	float: left;
+}
+#campoNrProcesso{
+	width: 338px;
+	border: solid;
+	float: left;
+}
+#msgNrProcesso{
+	width: 127px;
+	float: right;
 }
