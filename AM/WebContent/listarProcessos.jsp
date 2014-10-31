@@ -137,7 +137,7 @@
 												</button>
 												<ul class="dropdown-menu">
 													<li><a  href="lancaHonario?idProcesso=${processo.numeroProcesso}">Lançar Honorario</a></li>
-													<li><a href="ListaHonarario?idProcesso=${processo.numeroProcesso}" >Consultar Honorario</a></li>
+													<li><a href="listaHonorario?idProcesso=${processo.numeroProcesso}" >Consultar Honorario</a></li>
 												</ul>
 											</div> 
 							

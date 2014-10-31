@@ -55,16 +55,11 @@ public class CadastraDespesaController extends HttpServlet{
 			e1.printStackTrace();
 		}
 		
-		
-					
-		System.out.println("Numero Teste: "+request.getParameter("nrProcessoDespesa"));
-		
 		LancaDespesa lancaDespesa = new LancaDespesa();
 		
 		try {
 			lancaDespesa.setProcesso(new OracleProcessoDAO().getProcessoId(Long.parseLong(request.getParameter("nrProcessoDespesa"))));
 		} catch (NumberFormatException | ClassNotFoundException | SQLException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 	
@@ -78,9 +73,6 @@ public class CadastraDespesaController extends HttpServlet{
 		lancaDespesa.setTipoDespesa(tipoDespesa);
 		lancaDespesa.setDescricao(request.getParameter("obs"));
 		
-		
-		
-		System.out.println(lancaDespesa.getId());
 			try {
 				lancaDespesaBO.incluirDespesa(lancaDespesa);
 			} catch (SQLException | DespesaInvalidaException

@@ -96,7 +96,7 @@ public class OracleLancaHonorarioDAO implements OracleDAOInterface {
 		
 		LancaHonorario lancaHonorario = (LancaHonorario)objeto;
 		
-		String insert = " insert into T_AM_LANCA_HONORARIO " + " values(SQ_AM_LANCA_HONORARIO.NEXTVAL, ?,?,?,?,?)";
+		String insert = "insert into T_AM_LANCA_HONORARIO " + " values(SQ_AM_LANCA_HONORARIO.NEXTVAL, ?,?,?,?,?)";
 		PreparedStatement stmt = conn.prepareStatement(insert);
 		
 		stmt.setLong(1, lancaHonorario.getTipoTarefa().getId());

@@ -33,7 +33,7 @@
 					
 					<div id="idDivFormLancDespesas">
 						
-								<form method="post" action="lancaHonarario" id ="idFormLancaHonarario">
+								<form method="post" action="cadastraHonarario" id ="idFormLancaHonarario">
 								
 									<fieldset><legend>Lançar Honorario</legend>
 									

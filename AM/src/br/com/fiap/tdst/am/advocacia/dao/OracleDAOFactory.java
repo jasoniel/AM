@@ -6,6 +6,7 @@ import br.com.fiap.tdst.am.advocacia.dao.impl.OracleLancaDespesasDAO;
 import br.com.fiap.tdst.am.advocacia.dao.impl.OracleLancaHonorarioDAO;
 import br.com.fiap.tdst.am.advocacia.dao.impl.OracleProcessoDAO;
 import br.com.fiap.tdst.am.advocacia.dao.impl.OracleTipoDespesaDAO;
+import br.com.fiap.tdst.am.advocacia.dao.impl.OracleTipoTarefaDAO;
 import br.com.fiap.tdst.am.advocacia.dao.impl.OracleUsuarioDAO;
 
 public final class OracleDAOFactory {
@@ -44,6 +45,10 @@ public final class OracleDAOFactory {
 	public static OracleLancaHonorarioDAO getOracleLancaHonorarioDAO() throws ClassNotFoundException{
 		
 		return new OracleLancaHonorarioDAO();
+	}
+	public static OracleTipoTarefaDAO getOracleTipoTarefaDAO() throws ClassNotFoundException{
+		
+		return new OracleTipoTarefaDAO();
 	}
 	
 	
